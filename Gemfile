@@ -27,9 +27,9 @@ gem 'enumerize'
 gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
-gem 'fog'
-gem "asset_sync"
-gem 'aws-sdk'
+# gem 'fog'
+# gem "asset_sync"
+# gem 'aws-sdk'
 gem 'kaminari'
 gem 'letter_opener_web'
 gem 'rails_autolink'

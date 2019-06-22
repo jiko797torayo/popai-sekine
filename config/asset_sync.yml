@@ -1,0 +1,22 @@
+defaults: &defaults
+  fog_provider:          <%= ENV['FOG_PROVIDER'] %>
+  fog_region:            <%= ENV['FOG_REGION'] %>
+  aws_access_key_id:     <%= ENV['AWS_ACCEWSS_KEY_ID'] %>
+  aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  existing_remote_files: keep
+
+development:
+  <<: *defaults
+  enabled: false
+
+test:
+  <<: *defaults
+  enabled: false
+
+staging:
+  <<: *defaults
+  enabled: false
+
+production:
+  <<: *defaults
+  fog_directory: 'kura-vel'
