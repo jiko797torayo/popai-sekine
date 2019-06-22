@@ -19,4 +19,4 @@ staging:
 
 production:
   <<: *defaults
-  fog_directory: 'kura-vel'
+  fog_directory: 'popaisekine'
