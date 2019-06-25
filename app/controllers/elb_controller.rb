@@ -3,4 +3,3 @@ class ElbController < ApplicationController
     render plain: 'ok'
   end
 end
-

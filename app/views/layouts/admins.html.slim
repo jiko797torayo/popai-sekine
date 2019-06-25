@@ -1,0 +1,36 @@
+html
+  head
+    meta charset='utf-8'
+    = csrf_meta_tags
+    / = favicon_link_tag
+    meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'
+    meta name='description' content=''
+    meta name='author' content=''
+
+    title 管理画面
+
+    = stylesheet_link_tag    'admin', media: 'all'
+    = javascript_include_tag 'application'
+
+  body
+    nav.navbar.navbar-dark.bg-dark
+      div.container-fluid
+        div.navbar-header
+          = link_to 'top', admins_root_path, class: 'navbar-brand'
+        ul.navbar-nav
+          li.nav-item
+            = link_to t('sign_out'), destroy_admin_session_path, method: :delete, class: 'text-light'
+
+    div.container-fluid
+      div.row.container-sticky
+        nav.col-md-2.bg-light.sidebar
+          ul.nav.flex-column
+            li.nav-item
+              = link_to 'Dashboard', admins_root_path, class: 'nav-link'
+
+        main.col-md-9.ml-sm-auto.col-lg-10.px-4 role='main'
+          div.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+            p.notice = notice
+            p.notice = alert
+          = yield
+

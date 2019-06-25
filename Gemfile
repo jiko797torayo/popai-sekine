@@ -27,7 +27,7 @@ gem 'enumerize'
 gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', '~> 2.1.0'
 gem "asset_sync"
 gem 'aws-sdk'
 gem 'kaminari'
