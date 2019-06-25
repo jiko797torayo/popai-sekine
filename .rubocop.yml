@@ -11,6 +11,9 @@ AllCops:
     - Gemfile
     - features/**/*
     - spec/**/*
+    - app/controllers/admins/passwords_controller.rb
+    - app/controllers/admins/registrations_controller.rb
+    - app/controllers/admins/sessions_controller.rb
 
 # Rails用rubocop
 Rails:

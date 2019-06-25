@@ -10,7 +10,7 @@ require 'capistrano/rails/console'
 
 install_plugin Capistrano::Puma, load_hooks: false
 
-require "capistrano/scm/git"
+require 'capistrano/scm/git'
 install_plugin Capistrano::SCM::Git
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
