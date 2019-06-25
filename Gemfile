@@ -49,6 +49,10 @@ group :development do
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
   gem 'capistrano-rails-console', require: false
   gem 'capistrano-slackify', require: false
+  gem 'rubocop', require: false
+  gem 'pre-commit', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
 end
 
 group :test do
