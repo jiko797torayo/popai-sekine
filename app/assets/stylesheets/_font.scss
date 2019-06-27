@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'Puente-Bold';
-    src: image-url('Puente-Bold-webfont.woff2') format('woff2'),
-         image-url('Puente-Bold-webfont.woff') format('woff');
+    src: font-url('Puente-Bold-webfont.woff2') format('woff2'),
+         font-url('Puente-Bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
