@@ -54,3 +54,7 @@ Style/FrozenStringLiteralComment:
 Metrics/AbcSize:
   Enabled: true
   Max: 20
+
+# html_safeを許可
+Rails/OutputSafety:
+  Enabled: false

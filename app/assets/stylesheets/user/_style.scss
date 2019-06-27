@@ -45,6 +45,24 @@ label, p, a {
 .form-control, .btn {
   border-radius: 0.5rem;
 }
-.logo {
+.logo-signup {
   height: calc(100vh - 2rem - 421px);
+}
+.logo-signin {
+  height: calc(100vh - 2rem - 253px);
+}
+.errors {
+  font-size: 0.5rem;
+}
+.welcome-logout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 60px;
+  color: white;
+  font-family: 'Puente-Bold';
+  &:hover {
+    color: $royalgreen;
+  }
 }

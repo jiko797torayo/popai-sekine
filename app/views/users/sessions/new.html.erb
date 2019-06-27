@@ -1,26 +1,40 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xl-5 mx-auto'>
+      <div id='second'>
+        <div class='myform form'>
+          <div class='logo-signin d-flex align-items-center'>
+            <div class='col-xl-12 text-center'>
+              <h1 class='text-royalgreen mb-0 align-bottom'>
+                <span class='ml-2'>POPAI</span>
+                <br>
+                <span>SEKINE</span>
+              </h1>
+            </div>
+          </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'text-fontgray') do |f| %>
+            <%= devise_error_messages! %>
+            <div class='form-group'>
+              <%= f.label 'メールアドレス' %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+            <div class='form-group'>
+              <%= f.label 'パスワード' %>
+              <%= f.password_field :password, class: 'form-control'  %>
+            </div>
+            <div class='form-group text-center mb-3'>
+              <%= f.submit 'ログイン', class: 'btn btn-block mybtn btn-royalgreen text-light' %>
+            </div>
+            <div class='col-xl-12 '>
+              <div class='form-group'>
+                <p class='text-center text-fontgray'>
+                  <%= link_to '新規登録はこちら', new_user_registration_path, class: 'text-fontgray' %>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+</div>
