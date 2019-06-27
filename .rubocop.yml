@@ -14,6 +14,9 @@ AllCops:
     - app/controllers/admins/passwords_controller.rb
     - app/controllers/admins/registrations_controller.rb
     - app/controllers/admins/sessions_controller.rb
+    - app/controllers/users/passwords_controller.rb
+    - app/controllers/users/registrations_controller.rb
+    - app/controllers/users/sessions_controller.rb
 
 # Rails用rubocop
 Rails:
@@ -51,3 +54,7 @@ Style/FrozenStringLiteralComment:
 Metrics/AbcSize:
   Enabled: true
   Max: 20
+
+# html_safeを許可
+Rails/OutputSafety:
+  Enabled: false

@@ -1,0 +1,68 @@
+@import 'color';
+
+// -----------------------------------
+// サインアップ・ログインテンプレート
+// -----------------------------------
+body {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background:rgba(0, 0, 0, 0.76);
+}
+a {
+  text-decoration:none !important;
+}
+h1,h2,h3 {
+  font-family: 'Puente-Bold';
+}
+h1 {
+  font-size: 15vmin;
+}
+label, p, a {
+  font-size: 0.5rem;
+  color: $fontgray;
+}
+.myform{
+  position: relative;
+  height: calc(100vh - 2rem);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid $fontgray;
+  border-radius: 1.1rem;
+  outline: 0;
+}
+.new_user {
+  padding: 0 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.form-control, .btn {
+  border-radius: 0.5rem;
+}
+.logo-signup {
+  height: calc(100vh - 2rem - 421px);
+}
+.logo-signin {
+  height: calc(100vh - 2rem - 253px);
+}
+.errors {
+  font-size: 0.5rem;
+}
+.welcome-logout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 60px;
+  color: white;
+  font-family: 'Puente-Bold';
+  &:hover {
+    color: $royalgreen;
+  }
+}
