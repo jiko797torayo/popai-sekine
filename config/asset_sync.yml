@@ -15,8 +15,8 @@ test:
 
 staging:
   <<: *defaults
-  enabled: false
 
 production:
   <<: *defaults
-  fog_directory: 'popaisekine'
+  # fog_directory: 'popaisekine'
+  enabled: false
