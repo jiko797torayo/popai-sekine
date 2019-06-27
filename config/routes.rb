@@ -5,6 +5,13 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations'
   }
 
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    passwords:     'users/passwords',
+    registrations: 'users/registrations'
+  }
+
+
   get '/health', controller: :elb, action: :health
   root to: 'welcome#index'
 
