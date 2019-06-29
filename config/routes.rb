@@ -11,12 +11,13 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-
-  get '/health', controller: :elb, action: :health
-  root to: 'welcome#index'
-
   namespace :admins do
     root to: 'dashboards#index'
     resources :exercises
   end
+
+  get '/health', controller: :elb, action: :health
+  root to: 'welcome#index'
+  resources :records
+
 end

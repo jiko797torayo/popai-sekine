@@ -1,0 +1,15 @@
+<%= form_for record do |f| %>
+  <div class='field'>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+  <h3>Record Exercise</h3>
+  <div id='tasks'>
+    <%= f.fields_for :record_exercises do |record_exercise| %>
+      <%= render 'record_exercise_fields', f: record_exercise %>
+    <% end %>
+    <div id='links'>
+      <%= link_to_add_association 'add record_exercise', f, :record_exercises %>
+    </div>
+    <%= f.submit %>
+  </div>
+<% end %>
