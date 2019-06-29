@@ -58,3 +58,11 @@ Metrics/AbcSize:
 # html_safeを許可
 Rails/OutputSafety:
   Enabled: false
+
+# 空のメソッドを許可
+Style/EmptyMethod:
+  Enabled: false
+
+# シンボル配列の書き方強制を無視
+Style/SymbolArray:
+  Enabled: false
