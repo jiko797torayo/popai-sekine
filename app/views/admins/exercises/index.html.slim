@@ -1,0 +1,27 @@
+div.page-header
+  h2 = 'Exercises'
+div
+  p = link_to 'New', new_admins_exercise_path, class: 'btn btn-primary'
+div.table-responsive
+  table.table.table-condensed
+    thead
+      tr
+        th
+          = Exercise.human_attribute_name(:id)
+        th
+          = Exercise.human_attribute_name(:part)
+        th
+          = Exercise.human_attribute_name(:name)
+        th
+          = Exercise.human_attribute_name(:user_id)
+    tbody
+      - @objects.each do |obj|
+        tr
+          td
+            = obj.id
+          td
+            = obj.part
+          td
+            = link_to obj.name, edit_admins_exercise_path(obj.id)
+          td
+            = obj.try(:user_id)
