@@ -8,7 +8,6 @@ $(function(){
   // 種目削除時に種目数を設定する
   $(document).on('click', '.remove-exercise', function() {
     var removeExerciseCount = $(this).closest('.nested-fields').children('.form-group').first().children('input').val();
-    console.log(removeExerciseCount);
     $(this).closest('#record_exercises').children('.nested-fields').each(function(index, element) {
       if (index < removeExerciseCount) {
         $(element).children('.form-group').first().children('input').val(index + 1);
@@ -28,7 +27,6 @@ $(function(){
   // セット削除時にセット数を設定する
   $(document).on('click', '.remove-exercise-detail', function() {
     var removeSetCount = $(this).closest('.nested-fields').children('.form-group').first().children('input').val();
-    console.log(removeSetCount);
     $(this).closest('#exercise_details').children('.nested-fields').each(function(index, element) {
       if (index < removeSetCount) {
         $(element).children('.form-group').first().children('input').val(index + 1);
@@ -44,7 +42,7 @@ $(function(){
 $(function(){
   var replaceChildrenOptions, replaceSelectOptions;
   replaceSelectOptions = function($select, results) {
-    $select.html($('<option>'));
+    $select.html($(this).closest('option'));
     $.each(results, function() {
       var option;
       option = $('<option>').val(this.id).text(this.name);
@@ -54,7 +52,7 @@ $(function(){
   replaceChildrenOptions = function() {
     var $selectChildren, childrenPath;
     childrenPath = $(this).find('option:selected').data().childrenPath;
-    $selectChildren = $(this).closest('form').find('.select-children');
+    $selectChildren = $(this).closest('.nested-fields').find('.select-children');
     if (childrenPath != null) {
       $.ajax({
         url: childrenPath,
