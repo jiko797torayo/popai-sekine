@@ -24,6 +24,7 @@ class RecordsController < ApplicationController
       record_exercises_attributes: [
         :id,
         :exercise_id,
+        :exercise_count,
         :_destroy,
         exercise_details_attributes: [
           :id,

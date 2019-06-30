@@ -12,5 +12,7 @@
     <%= f.label :rep_count %>
     <%= f.number_field :rep_count %>
   </div>
-  <%= link_to_remove_association 'remove exercise detail', f %>
+  <%= link_to_remove_association f, class: 'remove-exercise-detail' do %>
+    <span>Remove Exercise Detail</span>
+  <% end %>
 </div>
