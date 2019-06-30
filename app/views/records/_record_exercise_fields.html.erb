@@ -2,15 +2,12 @@
   <div class='form-group'>
     <%= f.hidden_field :exercise_count, class: 'exercise-count' %>
     <%= f.label :part_id %>
-    <%= f.select :part_id, @parts.map{|p| [p.name, p.id]},
-              include_blank: true,
-              class: 'form-control',
-              id: 'selectExercise' %>
+    <% part_options = Part.order(:id).map { |p| [p.name, p.id, data: { children_path: part_exercises_path(p) }] } %>
+    <%= f.select :part_id, part_options, { include_blank: true }, class: 'select-parent form-control' %>
     <%= f.label :exercise_id %>
-    <%= f.select :exercise_id, @exercises.map{|e| [e.name, e.id]},
-              include_blank: true,
-              class: 'form-control',
-              id: 'selectExercise' %>
+    <% exercises = @record.try(:exercises) || [] %>
+    <% exercise_options = exercises.map { |e| [e.name, e.id] } %>
+    <%= f.select :exercise_id, exercise_options, { include_blank: true }, class: 'select-children form-control' %>
 
     <%= link_to_remove_association f, class: 'remove-exercise' do %>
       <span>Remove Exercise</span>
