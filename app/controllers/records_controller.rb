@@ -4,6 +4,7 @@ class RecordsController < ApplicationController
 
   def new
     @record = Record.new
+    @parts = Part.all
     @exercises = Exercise.all
   end
 
@@ -23,6 +24,7 @@ class RecordsController < ApplicationController
       :user_id,
       record_exercises_attributes: [
         :id,
+        :part_id,
         :exercise_id,
         :exercise_count,
         :_destroy,

@@ -9,7 +9,7 @@ div.table-responsive
         th
           = Exercise.human_attribute_name(:id)
         th
-          = Exercise.human_attribute_name(:part)
+          = Exercise.human_attribute_name(:part_id)
         th
           = Exercise.human_attribute_name(:name)
         th
@@ -20,7 +20,7 @@ div.table-responsive
           td
             = obj.id
           td
-            = obj.part
+            = obj.part.name
           td
             = link_to obj.name, edit_admins_exercise_path(obj.id)
           td

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admins do
     root to: 'dashboards#index'
     resources :exercises
+    resources :parts
   end
 
   get '/health', controller: :elb, action: :health

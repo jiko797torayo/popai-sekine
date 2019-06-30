@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_30_023143) do
+ActiveRecord::Schema.define(version: 2019_06_30_085629) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,8 +36,15 @@ ActiveRecord::Schema.define(version: 2019_06_30_023143) do
 
   create_table "exercises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "part"
     t.integer "user_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "part_id"
+  end
+
+  create_table "parts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_06_30_023143) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "exercise_count"
+    t.integer "part_id"
   end
 
   create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

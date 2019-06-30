@@ -11,7 +11,10 @@ div.form-group
   label.col-sm-2.control-label.text-nowrap
     = '部位'
   div.col-sm-5
-    = f.select :part, ['胸', '肩', '背中', '腕', '脚'], class: 'form-control'
+    = f.select :part_id, @parts.map{|e| [e.name, e.id]},
+              include_blank: true,
+              class: 'form-control',
+              id: 'selectPart'
 
 div.form-group
   label.col-sm-2.control-label.text-nowrap

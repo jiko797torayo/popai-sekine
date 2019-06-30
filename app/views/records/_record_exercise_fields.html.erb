@@ -1,6 +1,11 @@
 <div class='nested-fields well well-compact'>
   <div class='form-group'>
     <%= f.hidden_field :exercise_count, class: 'exercise-count' %>
+    <%= f.label :part_id %>
+    <%= f.select :part_id, @parts.map{|p| [p.name, p.id]},
+              include_blank: true,
+              class: 'form-control',
+              id: 'selectExercise' %>
     <%= f.label :exercise_id %>
     <%= f.select :exercise_id, @exercises.map{|e| [e.name, e.id]},
               include_blank: true,
