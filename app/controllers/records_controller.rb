@@ -4,8 +4,6 @@ class RecordsController < ApplicationController
 
   def new
     @record = Record.new
-    @record_exercise = @record.record_exercises.build
-    @exercise_detail = @record_exercise.exercise_details.build
     @exercises = Exercise.all
   end
 

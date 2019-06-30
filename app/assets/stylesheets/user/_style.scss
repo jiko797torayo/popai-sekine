@@ -66,3 +66,26 @@ label, p, a {
     color: $royalgreen;
   }
 }
+// -----------------------------------
+// レコード登録
+// -----------------------------------
+.record {
+  overflow-x: hidden;
+  label, a {
+  color: white;
+  }
+}
+.record-form{
+  position: relative;
+  height: calc(100vh - 2rem);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-image: image-url('main.jpeg');
+  background-size: cover;
+  background-position: 50% 50%;
+  outline: 0;
+}

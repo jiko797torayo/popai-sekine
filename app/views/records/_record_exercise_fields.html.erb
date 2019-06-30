@@ -1,5 +1,6 @@
 <div class='nested-fields well well-compact'>
   <div class='form-group'>
+    <%= f.text_field :exercise_count %>
     <%= f.label :exercise_id %>
     <%= f.select :exercise_id, @exercises.map{|e| [e.name, e.id]},
               include_blank: true,
@@ -9,7 +10,7 @@
     <%= link_to_remove_association 'remove record exercise', f %>
   </div>
 
-  <div class='items'>
+  <div id='exercise_details'>
     <%= f.fields_for :exercise_details do |exercise_detail| %>
       <%= render 'exercise_detail_fields', f: exercise_detail %>
     <%end%>
