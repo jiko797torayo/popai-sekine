@@ -72,20 +72,82 @@ label, p, a {
 .record {
   overflow-x: hidden;
   label, a {
-  color: white;
+    color: white;
   }
-}
-.record-form{
-  position: relative;
-  height: calc(100vh - 2rem);
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  background-image: image-url('main.jpeg');
-  background-size: cover;
-  background-position: 50% 50%;
-  outline: 0;
+  .record-form{
+    overflow-y: scroll;
+    position: relative;
+    height: calc(100vh - 2rem);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-image: image-url('main.jpeg');
+    background-size: cover;
+    background-position: 50% 50%;
+    outline: 0;
+  }
+  .exercise-detail-links {
+    width: 4.0rem;
+    height: 4.0rem;
+    margin-right: 0.5rem;
+  }
+  .record-exercise-links {
+    margin-top: 5.0rem;
+    padding: 0.5rem;
+  }
+  .fa-plus-circle {
+    font-size: 3.0rem;
+  }
+  .add-exercise-detail {
+    line-height: 3.0rem;
+  }
+  .add-exercise-detail-circle {
+    font-size: 2.9rem;
+  }
+  .form-group {
+    padding: 0.5rem;
+  }
+  .part-form {
+    // width: 3.5rem;
+    // margin-left: 1rem;
+    float: left;
+    padding: 0;
+    font-size: 2vw;
+  }
+  .exercise-form {
+    // width: 7.5rem;
+    // margin-left: 1rem;
+    float: left;
+    padding: 0;
+    font-size: 2vw;
+  }
+  .remove-exercise-circle {
+    // font-size: 1.9rem;
+    // line-height: 2.5rem;
+    font-size: 1vw;
+    line-height: 1vw;
+  }
+  .fa-times-circle {
+    // font-size: 2.0rem;
+    // line-height: 2.5rem;
+    font-size: 1vw;
+    line-height: 1vw;
+  }
+  .record-exercise-content {
+    height: 3rem;
+    margin-bottom: 1rem;
+  }
+  .close-circle {
+    width: 29px;
+    height: 29px;
+  }
+  .fa-times {
+    line-height: 29px;
+  }
+  .row {
+    margin: 0;
+  }
 }

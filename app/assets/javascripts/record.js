@@ -2,6 +2,7 @@ $(function(){
   // 種目追加時に種目数を設定する
   $(document).on('click', '.add-exercise', function() {
     var exerciseCount = $(this).closest('#record_exercises').children('.nested-fields').length;
+    console.log(exerciseCount);
     $(this).closest('#record_exercises').children('.nested-fields').last().children('.form-group').first().children('.exercise-count').val(exerciseCount);
   });
 

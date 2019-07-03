@@ -1,24 +1,27 @@
 <div class='container text-light'>
-  <div class='row'>
-    <div class='col-xl-12 mx-auto record'>
-      <div class='record-form form'>
-        <%= form_for record do |f| %>
-          <%# <%= devise_error_messages! %1> %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <div id='record_exercises'>
-          <%= f.fields_for :record_exercises do |record_exercise| %>
-            <%= render 'record_exercise_fields', f: record_exercise %>
-          <% end %>
-          <div class='links'>
-            <%= link_to_add_association f, :record_exercises, class: 'add-exercise' do %>
-              <span>Add Exercise</span>
-            <% end %>
-          </div>
-          <div class='form-group text-center mb-3'>
-            <%= f.submit 'レコード登録', class: 'btn btn-block mybtn btn-royalgreen text-light' %>
-          </div>
-        </div>
+<div class='text-light'>
+<%# <div class='row text-light'> %>
+  <%= form_for record do |f| %>
+    <%# <%= devise_error_messages! %1> %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%# <div id='record_exercises'> %>
+    <div>
+      <%= f.fields_for :record_exercises do |record_exercise| %>
+        <%= render 'record_exercise_fields', f: record_exercise %>
       <% end %>
     </div>
-  </div>
+    <div class='row'>
+      <div class='col-xl-12 mx-auto record p-0'>
+      <%# <div class='col-12 mx-auto record'> %>
+        <div class='record-form form' id='record_exercises'>
+          <div class='links record-exercise-links'>
+            <%= link_to_add_association '次の種目を追加', f, :record_exercises, class: 'add-exercise btn btn-block btn-royalgreen text-light' %>
+          </div>
+          <div class='form-group text-center mb-3'>
+            <%= f.submit 'レコード登録', class: 'btn btn-block btn-royalgreen text-light' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

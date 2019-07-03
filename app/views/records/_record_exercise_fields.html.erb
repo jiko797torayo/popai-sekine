@@ -1,26 +1,39 @@
 <div class='nested-fields well well-compact'>
-  <div class='form-group'>
+  <div class='form-group record-exercise-content'>
     <%= f.hidden_field :exercise_count, class: 'exercise-count' %>
-    <%= f.label :part_id %>
-    <% part_options = Part.order(:id).map { |p| [p.name, p.id, data: { children_path: part_exercises_path(p) }] } %>
-    <%= f.select :part_id, part_options, { include_blank: true }, class: 'select-parent form-control' %>
-    <%= f.label :exercise_id %>
-    <% exercises = @record.try(:exercises) || [] %>
-    <% exercise_options = exercises.map { |e| [e.name, e.id] } %>
-    <%= f.select :exercise_id, exercise_options, { include_blank: true }, class: 'select-children form-control' %>
-
-    <%= link_to_remove_association f, class: 'remove-exercise' do %>
-      <span>Remove Exercise</span>
-    <% end %>
+    <div class='row'>
+      <div class='col-2 p-0'>
+        <div class='rounded-circle bg-danger close-circle mx-auto text-center align-bottom'>
+          <%= link_to_remove_association f, class: 'remove-exercise' do %>
+            <i class='fas fa-times'></i>
+          <% end %>
+        </div>
+      </div>
+      <div class='col-2 p-0 mr-4'>
+        <% part_options = Part.order(:id).map { |p| [p.name, p.id, data: { children_path: part_exercises_path(p) }] } %>
+        <%= f.select :part_id, part_options, { include_blank: true }, class: 'select-parent form-control part-form' %>
+      </div>
+      <div class='col-6 p-0'>
+        <% exercises = [] %>
+        <% exercise_options = exercises.map { |e| [e.name, e.id] } %>
+        <%= f.select :exercise_id, exercise_options, { include_blank: true }, class: 'select-children form-control exercise-form' %>
+      </div>
+      <div class='col-1 p-0'>
+      </div>
+      <div class='col-1 p-0'>
+      </div>
+    </div>
   </div>
-
   <div id='exercise_details'>
     <%= f.fields_for :exercise_details do |exercise_detail| %>
       <%= render 'exercise_detail_fields', f: exercise_detail %>
     <%end%>
-    <div class='links'>
+    <div class='links exercise-detail-links float-right'>
       <%= link_to_add_association f, :exercise_details, class: 'add-exercise-detail' do %>
-        <span>Add Exercise Detail</span>
+        <span class='fa-stack'>
+          <i class='fas fa-circle fa-stack-1x add-exercise-detail-circle text-light'></i>
+          <i class='fas fa-plus-circle fa-stack-1x text-royalgreen'></i>
+        </span>
       <% end %>
     </div>
   </div>
