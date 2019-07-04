@@ -21,6 +21,9 @@ label, p, a {
   font-size: 0.5rem;
   color: $fontgray;
 }
+input {
+  font-size: 10px;
+}
 .myform{
   position: relative;
   height: calc(100vh - 2rem);
@@ -114,7 +117,7 @@ label, p, a {
   .part-form, .exercise-form, .weight-form, .rep-count-form {
     float: left;
     padding: 0;
-    font-size: 2vw;
+    // font-size: 2vw;
   }
   .weight-form, .rep-count-form {
     width: 100%;
