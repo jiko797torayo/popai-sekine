@@ -1,5 +1,4 @@
 <div class='nested-fields form-inline text-light exercise-detail-row'>
-  <%# <div class='row exercise-detail-row'> %>
   <div class='row form-group'>
     <div class='col-2 p-0 line-height-38'>
       <div class='rounded-circle bg-danger close-circle mx-auto text-center align-bottom'>
@@ -15,13 +14,14 @@
     <div class='col-1 p-0 line-height-38'>
     </div>
     <div class='form-exercise-detail col-3 p-0 pl-2 line-height-38'>
-      <%= f.number_field :weight, class: 'form-control weight-form' %>
+      <% weight_options = (0..400).select { |n| n % 5 == 0 } %>
+      <%= f.select :weight, weight_options, { selected: 60 }, class: 'form-control weight-form' %>
     </div>
     <div class='col-1 p-0 line-height-38'>
       kg
     </div>
     <div class='form-exercise-detail col-2 p-0 pl-2 line-height-38'>
-      <%= f.number_field :rep_count, class: 'form-control rep-count-form' %>
+      <%= f.select :rep_count, 1..30, { selected: 10 }, class: 'form-control weight-form' %>
     </div>
     <div class='col-1 p-0 line-height-38'>
       reps
