@@ -11,8 +11,8 @@ body {
 a {
   text-decoration:none !important;
 }
-h1,h2,h3 {
-  font-family: 'Puente-Bold', 'arial black';
+h1,h2,h3, .puente-bold {
+  font-family: 'Puente-Bold', 'arial black', 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'メイリオ', sans-serif;
 }
 h1 {
   font-size: 15vmin;
@@ -64,5 +64,95 @@ label, p, a {
   font-family: 'Puente-Bold';
   &:hover {
     color: $royalgreen;
+  }
+}
+// -----------------------------------
+// レコード登録
+// -----------------------------------
+.record {
+  overflow-x: hidden;
+  label, a {
+    color: white;
+  }
+  .record-form{
+    overflow-y: scroll;
+    position: relative;
+    height: calc(100vh - 2rem);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-image: image-url('main.jpeg');
+    background-size: cover;
+    background-position: 50% 50%;
+    outline: 0;
+  }
+  .exercise-detail-links {
+    width: 4.0rem;
+    height: 4.0rem;
+    margin-right: 0.5rem;
+  }
+  .record-exercise-links {
+    margin-top: 5.0rem;
+    padding: 0.5rem;
+  }
+  .fa-plus-circle {
+    font-size: 3.0rem;
+  }
+  .add-exercise-detail {
+    line-height: 3.0rem;
+  }
+  .add-exercise-detail-circle {
+    font-size: 2.9rem;
+  }
+  .form-group {
+    padding: 0.5rem;
+    margin-bottom: 0;
+  }
+  .part-form, .exercise-form, .weight-form, .rep-count-form {
+    float: left;
+    padding: 0;
+    font-size: 2vw;
+  }
+  .weight-form, .rep-count-form {
+    width: 100%;
+  }
+  .remove-exercise-circle {
+    font-size: 1vw;
+    line-height: 1vw;
+  }
+  .fa-times-circle {
+    font-size: 1vw;
+    line-height: 1vw;
+  }
+  .record-exercise-content {
+    // height: 3rem;
+    // margin-bottom: 1rem;
+  }
+  .close-circle {
+    width: 30px;
+    height: 30px;
+    margin: 4px 0;
+    line-height: 38px;
+  }
+  .fa-times {
+    font-size: 20px;
+    vertical-align: top;
+    line-height: 30px;
+  }
+  .row {
+    margin: 0;
+    width: 100%;
+  }
+  .form-control {
+    height: 38px;
+  }
+  .line-height-38 {
+    line-height: 38px;
+  }
+  .add_fields:hover, .add_fields:focus {
+    color: #f8f9fa !important;
   }
 }

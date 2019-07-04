@@ -1,5 +1,6 @@
 class Admins::ExercisesController < AdminsController
   before_action :set_exercise, only: [:edit, :update, :destroy]
+  before_action :set_parts, only: [:new, :create, :edit, :update]
 
   def index
     @objects = Exercise.all
@@ -40,11 +41,16 @@ class Admins::ExercisesController < AdminsController
   def exercise_params
     params.require(:exercise).permit(
       :name,
-      :part
+      :part_id,
+      :user_id
     )
   end
 
   def set_exercise
     @obj = Exercise.find(params[:id])
+  end
+
+  def set_parts
+    @parts = Part.all
   end
 end

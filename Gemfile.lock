@@ -872,6 +872,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (1.0.1)
       rake (< 13.0)
+    cocoon (1.2.14)
     coderay (1.1.2)
     colorize (0.8.1)
     concurrent-ruby (1.1.5)
@@ -1441,6 +1442,7 @@ DEPENDENCIES
   capybara
   capybara-webkit
   carrierwave
+  cocoon
   config
   devise
   dotenv-rails

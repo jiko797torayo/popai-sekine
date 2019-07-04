@@ -1,0 +1,10 @@
+div.page-header
+  h2 = 'Part New'
+= form_for @obj, url: admins_parts_path, html: {class: 'form-horizontal'} do |f|
+  = render partial: 'form', locals: { obj: @obj, f: f }
+
+  div.form-group
+    div.col-sm-offset-2.col-sm-10
+      = f.submit 'submit', class: 'btn btn-primary'
+
+

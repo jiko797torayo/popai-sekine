@@ -35,6 +35,7 @@ gem 'letter_opener_web'
 gem 'rails_autolink'
 gem 'bootsnap', require: false
 gem 'paranoia'
+gem 'cocoon'
 
 group :development do
   gem 'spring'
