@@ -11,8 +11,8 @@ body {
 a {
   text-decoration:none !important;
 }
-h1,h2,h3 {
-  font-family: 'Puente-Bold', 'arial black';
+h1,h2,h3, .puente-bold {
+  font-family: 'Puente-Bold', 'arial black', 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'メイリオ', sans-serif;
 }
 h1 {
   font-size: 15vmin;
@@ -109,45 +109,50 @@ label, p, a {
   }
   .form-group {
     padding: 0.5rem;
+    margin-bottom: 0;
   }
-  .part-form {
-    // width: 3.5rem;
-    // margin-left: 1rem;
+  .part-form, .exercise-form, .weight-form, .rep-count-form {
     float: left;
     padding: 0;
     font-size: 2vw;
   }
-  .exercise-form {
-    // width: 7.5rem;
-    // margin-left: 1rem;
-    float: left;
-    padding: 0;
-    font-size: 2vw;
+  .weight-form, .rep-count-form {
+    width: 100%;
   }
   .remove-exercise-circle {
-    // font-size: 1.9rem;
-    // line-height: 2.5rem;
     font-size: 1vw;
     line-height: 1vw;
   }
   .fa-times-circle {
-    // font-size: 2.0rem;
-    // line-height: 2.5rem;
     font-size: 1vw;
     line-height: 1vw;
   }
   .record-exercise-content {
-    height: 3rem;
-    margin-bottom: 1rem;
+    // height: 3rem;
+    // margin-bottom: 1rem;
   }
   .close-circle {
-    width: 29px;
-    height: 29px;
+    width: 30px;
+    height: 30px;
+    margin: 4px 0;
+    line-height: 38px;
   }
   .fa-times {
-    line-height: 29px;
+    font-size: 20px;
+    vertical-align: top;
+    line-height: 30px;
   }
   .row {
     margin: 0;
+    width: 100%;
+  }
+  .form-control {
+    height: 38px;
+  }
+  .line-height-38 {
+    line-height: 38px;
+  }
+  .add_fields:hover, .add_fields:focus {
+    color: #f8f9fa !important;
   }
 }

@@ -21,25 +21,26 @@ $(function(){
   // セット追加時にセット数を設定する
   $(document).on('click', '.add-exercise-detail', function() {
     var setCount = $(this).closest('#exercise_details').children('.nested-fields').length;
-    $(this).closest('#exercise_details').children('.nested-fields').last().children('.form-group').first().children('input').val(setCount);
-    $(this).closest('#exercise_details').children('.nested-fields').last().children('.form-group').first().children('.set-count').text(setCount);
+    $(this).closest('#exercise_details').children('.nested-fields').last().children('.row').first().children('.form-exercise-detail').first().children('input').val(setCount);
+    $(this).closest('#exercise_details').children('.nested-fields').last().children('.row').first().children('.form-exercise-detail').first().children('.set-count').text(setCount);
   });
 
   // セット削除時にセット数を設定する
   $(document).on('click', '.remove-exercise-detail', function() {
-    var removeSetCount = $(this).closest('.nested-fields').children('.form-group').first().children('input').val();
+    var removeSetCount = $(this).closest('.nested-fields').children('.row').first().children('.form-exercise-detail').first().children('input').val();
     $(this).closest('#exercise_details').children('.nested-fields').each(function(index, element) {
       if (index < removeSetCount) {
-        $(element).children('.form-group').first().children('input').val(index + 1);
-        $(element).children('.form-group').first().children('.set-count').text(index + 1);
+        $(element).children('.row').first().children('.form-exercise-detail').first().children('input').val(index + 1);
+        $(element).children('.row').first().children('.form-exercise-detail').first().children('.set-count').text(index + 1);
       } else {
-        $(element).children('.form-group').first().children('input').val(index);
-        $(element).children('.form-group').first().children('.set-count').text(index);
+        $(element).children('.row').first().children('.form-exercise-detail').first().children('input').val(index);
+        $(element).children('.row').first().children('.form-exercise-detail').first().children('.set-count').text(index);
       }
     });
   });
 });
 
+// プルダウン項目のajax取得
 $(function(){
   var replaceChildrenOptions, replaceSelectOptions;
   replaceSelectOptions = function($select, results) {
@@ -65,7 +66,7 @@ $(function(){
           console.error("Error occurred in replaceChildrenOptions");
           console.log("XMLHttpRequest: " + XMLHttpRequest.status);
           console.log("textStatus: " + textStatus);
-          console.log("errorThrown: " + errorThrown);
+          console.log("errorTh.rown: " + errorTh.rown);
         }
       });
     } else {
@@ -73,5 +74,9 @@ $(function(){
     }
   };
   $(document).on('change', '.select-parent', replaceChildrenOptions);
+});
+
+$(function(){
+  $('add-exercise').removeAttr('data-disable-with')
 });
 

@@ -9,16 +9,14 @@
           <% end %>
         </div>
       </div>
-      <div class='col-2 p-0 mr-4'>
+      <div class='col-2 p-0'>
         <% part_options = Part.order(:id).map { |p| [p.name, p.id, data: { children_path: part_exercises_path(p) }] } %>
         <%= f.select :part_id, part_options, { include_blank: true }, class: 'select-parent form-control part-form' %>
       </div>
-      <div class='col-6 p-0'>
+      <div class='col-7 p-0 pl-2'>
         <% exercises = [] %>
         <% exercise_options = exercises.map { |e| [e.name, e.id] } %>
         <%= f.select :exercise_id, exercise_options, { include_blank: true }, class: 'select-children form-control exercise-form' %>
-      </div>
-      <div class='col-1 p-0'>
       </div>
       <div class='col-1 p-0'>
       </div>

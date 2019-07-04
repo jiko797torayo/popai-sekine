@@ -1,18 +1,32 @@
-<div class='nested-fields form-inline text-light'>
-  <div class='form-group'>
-    <%= f.label :set_count %>
-    <%= f.hidden_field :set_count %>
-    <span class='set-count'></span>
+<div class='nested-fields form-inline text-light exercise-detail-row'>
+  <%# <div class='row exercise-detail-row'> %>
+  <div class='row form-group'>
+    <div class='col-2 p-0 line-height-38'>
+      <div class='rounded-circle bg-danger close-circle mx-auto text-center align-bottom'>
+        <%= link_to_remove_association f, class: 'remove-exercise-detail' do %>
+          <i class='fas fa-times'></i>
+        <% end %>
+      </div>
+    </div>
+    <div class='form-exercise-detail col-1 p-0 line-height-38'>
+      Set<span class='set-count'></span>
+      <%= f.hidden_field :set_count %>
+    </div>
+    <div class='col-1 p-0 line-height-38'>
+    </div>
+    <div class='form-exercise-detail col-3 p-0 pl-2 line-height-38'>
+      <%= f.number_field :weight, class: 'form-control weight-form' %>
+    </div>
+    <div class='col-1 p-0 line-height-38'>
+      kg
+    </div>
+    <div class='form-exercise-detail col-2 p-0 pl-2 line-height-38'>
+      <%= f.number_field :rep_count, class: 'form-control rep-count-form' %>
+    </div>
+    <div class='col-1 p-0 line-height-38'>
+      reps
+    </div>
+    <div class='col-1 p-0 line-height-38'>
+    </div>
   </div>
-  <div class='form-group'>
-    <%= f.label :weight %>
-    <%= f.number_field :weight %>
-  </div>
-  <div class='form-group'>
-    <%= f.label :rep_count %>
-    <%= f.number_field :rep_count %>
-  </div>
-  <%= link_to_remove_association f, class: 'remove-exercise-detail' do %>
-    <span>Remove Exercise Detail</span>
-  <% end %>
 </div>
