@@ -19,9 +19,50 @@
     <%= stylesheet_link_tag    'user', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-  <%# <body class='container'> %>
-  <body>
+  <body class='user-body'>
+    <header>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-12 mx-auto p-0 header text-center bg-whitegray'>
+            <%= link_to root_path do %>
+              <i class='fas fa-chevron-left'></i>
+            <% end %>
+            <%= yield(:title) %>
+          </div>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer class=''>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-4 mx-auto p-0 footer bg-whitegray text-center'>
+            <div class='footer-icon w-100'>
+              <i class='far fa-list-alt'></i>
+            </div>
+            <div class='footer-text w-100'>
+              レコード
+            </div>
+          </div>
+          <div class='col-4 mx-auto p-0 footer bg-whitegray text-center'>
+            <div class='footer-icon w-100'>
+              <i class='far fa-calendar-alt'></i>
+            </div>
+            <div class='footer-text w-100'>
+              カレンダー
+            </div>
+          </div>
+          <div class='col-4 mx-auto p-0 footer bg-whitegray text-center'>
+            <div class='footer-icon w-100'>
+              <i class='fas fa-cog'></i>
+            </div>
+            <div class='footer-text w-100'>
+              設定
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 
