@@ -1,5 +1,6 @@
 $royalgreen: #00E7B6;
 $fontgray: #7F7F7F;
+$whitegray: #F5F5F5;
 
 .bg-royalgreen {
   background: $royalgreen;
@@ -12,4 +13,7 @@ $fontgray: #7F7F7F;
 }
 .btn-royalgreen {
   background: $royalgreen;
+}
+.bg-whitegray {
+  background: $whitegray;
 }
