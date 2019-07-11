@@ -2,6 +2,9 @@ class RecordsController < ApplicationController
   layout 'users'
   before_action :authenticate_user!
 
+  def index
+  end
+
   def new
     @record = Record.new
     @parts = Part.all
