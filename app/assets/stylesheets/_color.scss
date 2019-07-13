@@ -1,5 +1,6 @@
 $royalgreen: #00E7B6;
 $fontgray: #7F7F7F;
+$icongray: #CFCFCF;
 $whitegray: #F5F5F5;
 
 .bg-royalgreen {
@@ -16,4 +17,8 @@ $whitegray: #F5F5F5;
 }
 .bg-whitegray {
   background: $whitegray;
+}
+.mono {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
