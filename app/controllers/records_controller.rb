@@ -2,6 +2,10 @@ class RecordsController < ApplicationController
   layout 'users'
   before_action :authenticate_user!
 
+  def index
+    @records = current_user.records.eager_load(record_exercises: { exercise: :part })
+  end
+
   def new
     @record = Record.new
     @parts = Part.all

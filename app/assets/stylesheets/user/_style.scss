@@ -15,9 +15,15 @@
 }
 .footer {
   height: 3rem;
+  a:hover {
+    color: $royalgreen;
+  }
   .footer-icon {
     height: 1.5rem;
     line-height: 2rem;
+    .fa-list-alt, .fa-cog {
+      font-size: 1rem;
+    }
   }
   .footer-text {
     height: 1.5rem;
@@ -45,7 +51,7 @@ h1,h2,h3, .puente-bold {
 h1 {
   font-size: 15vmin;
 }
-label, p, a {
+label, p, a, li {
   font-size: 0.5rem;
   color: $fontgray;
 }
@@ -105,12 +111,10 @@ input {
   label, a {
     color: white;
   }
-  .record-form{
+  .record-form, .record-index {
     overflow-y: scroll;
     position: relative;
     height: calc(100vh - 6rem);
-    display: -ms-flexbox;
-    display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
@@ -119,6 +123,10 @@ input {
     background-size: cover;
     background-position: 50% 50%;
     outline: 0;
+  }
+  .record-form {
+    display: -ms-flexbox;
+    display: flex;
   }
   .exercise-detail-links {
     width: 4.0rem;
@@ -145,7 +153,6 @@ input {
   .part-form, .exercise-form, .weight-form, .rep-count-form {
     float: left;
     padding: 0;
-    // font-size: 2vw;
   }
   .weight-form, .rep-count-form {
     width: 100%;
@@ -157,10 +164,6 @@ input {
   .fa-times-circle {
     font-size: 1vw;
     line-height: 1vw;
-  }
-  .record-exercise-content {
-    // height: 3rem;
-    // margin-bottom: 1rem;
   }
   .close-circle {
     width: 30px;
@@ -177,13 +180,50 @@ input {
     margin: 0;
     width: 100%;
   }
+  .record-row {
+    margin: 0.5rem;
+    margin-bottom: 0;
+    width: calc(100vw - 1rem);
+    max-width: 500px;
+    border-radius: 1rem;
+    height: 101px;
+  }
   .form-control {
     height: 38px;
   }
   .line-height-38 {
     line-height: 38px;
   }
+  .comment-icon {
+    line-height: 62px;
+    font-size: 2.5rem;
+  }
   .add_fields:hover, .add_fields:focus {
     color: #f8f9fa !important;
+  }
+  .record-row-day {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .record-row-day-number {
+    font-size: 1.1rem;
+  }
+  .fa-comment-alt {
+    // color: $royalgreen;
+    color: $icongray;
+    font-size: 40px;
+  }
+  ul {
+    overflow: hidden;
+    width: 100%;
+    li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .trainer-image {
+    max-height: 60px;
+    width: 60px;
   }
 }
