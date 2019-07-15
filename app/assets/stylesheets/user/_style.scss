@@ -58,7 +58,7 @@ h1,h2,h3, .puente-bold {
 h1 {
   font-size: 15vmin;
 }
-label, p, a, li {
+label, p, a, li, .text-nomal {
   font-size: 0.5rem;
   color: $fontgray;
 }
@@ -111,7 +111,7 @@ input {
   }
 }
 // -----------------------------------
-// レコード登録
+// レコード
 // -----------------------------------
 .record {
   overflow-x: hidden;
@@ -195,6 +195,14 @@ input {
     border-radius: 1rem;
     height: 101px;
   }
+  .record-show {
+    margin: 0.5rem;
+    margin-bottom: 0;
+    width: calc(100vw - 1rem);
+    max-width: 500px;
+    border-radius: 1rem;
+    height: calc(100vh - 7rem);
+  }
   .form-control {
     height: 38px;
   }
@@ -216,7 +224,6 @@ input {
     font-size: 1.1rem;
   }
   .fa-comment-alt {
-    // color: $royalgreen;
     color: $icongray;
     font-size: 40px;
   }
@@ -249,5 +256,49 @@ input {
   }
   .record-new-image a {
     cursor : pointer;
+  }
+  .record-show-day {
+    height: 40px;
+  }
+  .record-show-detail, .record-show-comment-outer {
+    height: calc(50% - 50px);
+    overflow-y: scroll;
+    background:
+      /* Shadow covers */
+      linear-gradient(white 30%, rgba(255,255,255,0)),
+      linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+      /* Shadows */
+      radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+      radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+    background-repeat: no-repeat;
+    // background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-size: 100% 40px, 100% 40px, 100% 5px, 100% 5px;
+    background-attachment: local, local, scroll, scroll;
+  }
+  .record-show-comment {
+    height: calc(50% - 50px);
+  }
+  .record-show-comment-new {
+    height: 60px;
+  }
+  .record-show-day-text {
+    font-size: 22px;
+  }
+  .fa-edit {
+    position: relative;
+    font-size: 20px;
+  }
+  .record-edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .comment-trainer-image, .comment-user-image {
+    height: 31px;
+    width: 31px;
+  }
+  .fa-paper-plane {
+    font-size: 30px;
+    line-height: 60px;
   }
 }
