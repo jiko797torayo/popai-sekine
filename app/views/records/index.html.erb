@@ -10,7 +10,7 @@
               <br>
               <span class='record-row-day-number'><%= record.created_at.strftime('%m.%d').upcase %></span>
             </div>
-            <div class='col-5 mx-auto p-0 pl-2 pt-1'>
+            <div class='col-5 mx-auto p-0 pl-2 pt-2'>
               <ul class='m-0'>
                 <% get_record_exercises_limit = 3 %>
                 <% record.record_exercises.each_with_index do |record_exercise, i| %>
