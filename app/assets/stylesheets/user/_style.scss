@@ -233,4 +233,21 @@ input {
     max-height: 60px;
     width: 60px;
   }
+  .record-new {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    font-size: 30px;
+  }
+  .record-new-image {
+    margin: 10px 0;
+    height: 40px;
+    width: 40px;
+  }
+  .record-new-image a {
+    cursor : pointer;
+  }
 }
