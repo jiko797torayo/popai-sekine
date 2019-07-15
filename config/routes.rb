@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/health', controller: :elb, action: :health
-  root to: 'welcome#index'
+  root to: 'records#index'
   resources :records
   resources :parts, only: [] do
     resources :exercises, only: :index
