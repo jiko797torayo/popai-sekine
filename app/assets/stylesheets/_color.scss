@@ -1,10 +1,17 @@
 $royalgreen: #00E7B6;
+$commentgreen: #7FFFD4;
 $fontgray: #7F7F7F;
 $icongray: #CFCFCF;
 $whitegray: #F5F5F5;
 
 .bg-royalgreen {
   background: $royalgreen;
+}
+.bg-commentgreen {
+  background: $commentgreen;
+}
+.bg-whitegray {
+  background: $whitegray;
 }
 .text-royalgreen {
   color: $royalgreen;
@@ -14,9 +21,6 @@ $whitegray: #F5F5F5;
 }
 .btn-royalgreen {
   background: $royalgreen;
-}
-.bg-whitegray {
-  background: $whitegray;
 }
 .mono {
   -webkit-filter: grayscale(100%);

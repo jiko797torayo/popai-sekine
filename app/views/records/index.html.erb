@@ -1,36 +1,43 @@
 <% provide(:title, 'レコード一覧') %>
-<div class='container mw-100'>
+<div class='container mw-1024'>
   <div class='row'>
     <div class='col-12 mx-auto record p-0'>
       <div class='record-index form'>
         <% @records.each do |record| %>
-          <div class='row bg-light p-3 record-row mx-auto'>
-            <div class='col-2 mx-auto p-0 pt-1 text-royalgreen text-center record-row-day'>
-              <%= record.created_at.strftime('%a').upcase %>
-              <br>
-              <span class='record-row-day-number'><%= record.created_at.strftime('%m.%d').upcase %></span>
-            </div>
-            <div class='col-5 mx-auto p-0 pl-3 pt-1'>
-              <ul class='m-0'>
-                <% get_record_exercises_limit = 3 %>
-                <% record.record_exercises.each_with_index do |record_exercise, i| %>
-                  <% if i < get_record_exercises_limit %>
-                    <li><%= "#{record_exercise.exercise.part.name} #{record_exercise.exercise.name}" %></li>
-                  <% else %>
-                    <li>etc</li>
-                    <% break %>
+          <%= link_to record_path(record) do %>
+            <div class='row bg-white p-3 record-row mx-auto'>
+              <div class='col-2 mx-auto p-0 pt-1 text-royalgreen text-center record-row-day'>
+                <%= record.created_at.strftime('%a').upcase %>
+                <br>
+                <span class='record-row-day-number'><%= record.created_at.strftime('%m.%d') %></span>
+              </div>
+              <div class='col-5 mx-auto p-0 pl-2 pt-2'>
+                <ul class='m-0'>
+                  <% get_record_exercises_limit = 3 %>
+                  <% record.record_exercises.each_with_index do |record_exercise, i| %>
+                    <% if i < get_record_exercises_limit %>
+                      <li><%= "#{record_exercise.exercise.part.name} #{record_exercise.exercise.name}" %></li>
+                    <% else %>
+                      <li>etc</li>
+                      <% break %>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </ul>
+                </ul>
+              </div>
+              <div class='col-3 mx-auto p-0 pr-2 pl-1 pt-1'>
+                <%= image_tag 'popaisekine.jpg', class: 'rounded-circle trainer-image mx-auto d-block mono' %>
+              </div>
+              <div class='col-2 mx-auto p-0 pt-1 pl-1 text-center h-100 comment-icon'>
+                <i class='fas fa-comment-alt'></i>
+                <%# <i class='far fa-comment-alt'></i> %>
+              </div>
             </div>
-            <div class='col-3 mx-auto p-0 pr-2 pl-1 pt-1'>
-              <%= image_tag 'popaisekine.jpg', class: 'rounded-circle trainer-image mx-auto d-block mono' %>
-            </div>
-            <div class='col-2 mx-auto p-0 pt-1 pl-1 text-center h-100 comment-icon'>
-              <i class='fas fa-comment-alt'></i>
-              <%# <i class='far fa-comment-alt'></i> %>
-            </div>
-          </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class='record-new rounded-circle bg-royalgreen'>
+        <%= link_to new_record_path do %>
+          <%= image_tag 'record-new', class: 'record-new-image mx-auto d-block' %>
         <% end %>
       </div>
     </div>
