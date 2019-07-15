@@ -7,45 +7,37 @@
           <div class='col-12 mx-auto h-100 p-0'>
             <div class='row record-show-day text-center d-flex align-items-end'>
               <div class='col-12 mx-auto record-show-day-text'>
-                <span class='text-royalgreen'>2019.06.20 FRI</span>
+                <span class='text-royalgreen'><%= @record.created_at.strftime('%Y.%m.%d %a').upcase %></span>
                 <div class='record-edit'>
                   <i class='far fa-edit align-text-top text-fontgray'></i>
                 </div>
               </div>
             </div>
-            <div class='row record-show-detail'>
+            <% if @comments %>
+              <div class='row record-show-detail'>
+            <% else %>
+              <div class='row record-show-detail full-detail'>
+            <% end %>
               <div class='col-12 p-0'>
-                <div class='row'>
-                  <ul class-'m-0'>
-                    <li>腕 アームカール</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                  </ul>
-                </div>
-                <div class='row'>
-                  <ul class-'m-0'>
-                    <li>腕 アームカール</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                  </ul>
-                </div>
-                <div class='row'>
-                  <ul class-'m-0'>
-                    <li>腕 アームカール</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                  </ul>
-                </div>
-                <div class='row'>
-                  <ul class-'m-0'>
-                    <li>腕 アームカール</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                    <li class='pl-2'>set1 12kg × 12reps</li>
-                  </ul>
-                </div>
+                <% @record.record_exercises.each do |record_exercise| %>
+                  <div class='row'>
+                    <ul class-'m-0'>
+                      <li><%= "#{record_exercise.exercise.part.name} #{record_exercise.exercise.name}" %></li>
+                      <% record_exercise.exercise_details.each do |exercise_detail| %>
+                        <li class='pl-3'>
+                          <%= "Set#{exercise_detail.set_count} #{exercise_detail.weight}kg × #{exercise_detail.rep_count}reps" %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
               </div>
             </div>
-            <div class='row record-show-comment border-top border-bottom'>
+            <% if @comments %>
+              <div class='row record-show-comment border-top border-bottom'>
+            <% else %>
+              <div class='row record-show-comment border-top border-bottom d-none'>
+            <% end %>
               <div class='col-12 p-0 h-100 record-show-comment-outer'>
                 <div class='row pt-2 text-nomal'>
                   <div class='col-2 p-0 h-100'>

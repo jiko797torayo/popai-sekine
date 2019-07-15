@@ -275,6 +275,9 @@ input {
     background-size: 100% 40px, 100% 40px, 100% 5px, 100% 5px;
     background-attachment: local, local, scroll, scroll;
   }
+  .full-detail {
+    height: calc(100% - 100px);
+  }
   .record-show-comment {
     height: calc(50% - 50px);
   }
