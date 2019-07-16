@@ -12,5 +12,12 @@ module PopaiSekine
       g.helper false
       g.test_framework false
     end
+
+    # Sentry
+    Raven.configure do |config|
+      config.dsn = "https://#{ENV['RAVEN_KEY']}@sentry.io/#{ENV['RAVEN_PROJECT_ID']}"
+      config.sanitize_fields = Rails.application.config.filter_parameters.map(&:to_s)
+      config.environments = %w[production]
+    end
   end
 end
