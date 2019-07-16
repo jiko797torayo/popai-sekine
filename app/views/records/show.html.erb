@@ -38,53 +38,14 @@
             <% else %>
               <div class='row record-show-comment border-top border-bottom d-none'>
             <% end %>
-              <div class='col-12 p-0 h-100 record-show-comment-outer'>
-                <div class='row pt-2 text-nomal'>
-                  <div class='col-2 p-0 h-100'>
-                    <%= image_tag 'popaisekine.jpg', class: 'rounded-circle comment-trainer-image mr-1 mx-auto d-block' %>
-                  </div>
-                  <div class='col-9 p-0 h-100'>
-                    <div class='ml-1 pt-0 pb-2 pr-2'>
-                      今日の筋トレは最高だった。今日の筋トレは最高だった。今日の筋トレは最高だった。
-                      <br>
-                      自分史上最高だ。
-                    </div>
-                  </div>
-                  <div class='col-1 p-0 h-100'>
-                  </div>
-                </div>
-                <div class='row pt-2 text-nomal'>
-                  <div class='col-1 p-0 h-100'>
-                  </div>
-                  <div class='col-9 p-0 h-100'>
-                    <div class='ml-1 pt-0 pb-2 pl-2 float-right'>
-                      今日の筋トレは最高だった。
-                    </div>
-                  </div>
-                  <div class='col-2 p-0 h-100'>
-                    <%= image_tag 'popaisekine.jpg', class: 'rounded-circle comment-user-image mr-1 mx-auto d-block' %>
-                  </div>
-                </div>
-                <% 4.times do %>
-                  <div class='row pt-2 text-nomal'>
-                    <div class='col-2 p-0 h-100'>
-                      <%= image_tag 'popaisekine.jpg', class: 'rounded-circle comment-trainer-image mr-1 mx-auto d-block' %>
-                    </div>
-                    <div class='col-9 p-0 h-100'>
-                      <div class='ml-1 pt-0 pb-2 pr-2'>
-                        今日の筋トレは最高だった。今日の筋トレは最高だった。今日の筋トレは最高だった。
-                        <br>
-                        自分史上最高だ。
-                      </div>
-                    </div>
-                    <div class='col-1 p-0 h-100'>
-                    </div>
-                  </div>
-                <% end %>
+              <div id='comments' class='col-12 p-0 h-100 record-show-comment-outer'>
+                <%= render @comments %>
               </div>
             </div>
             <div class='row mt-2 record-show-comment-new'>
-              <div class='col-10 p-0 h-100 border form-control'>
+              <%# <div class='col-10 p-0 h-100 border form-control'> %>
+              <div class='col-10 p-0'>
+                <%= text_field nil, nil, 'data-behavior': 'comment_speaker', class: 'form-control h-100 border' %>
               </div>
               <div class='col-2 p-0 h-100 text-royalgreen text-center'>
                 <i class='fas fa-paper-plane'></i>

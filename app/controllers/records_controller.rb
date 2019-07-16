@@ -3,8 +3,8 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @records = current_user.records
-                           .eager_load(record_exercises: { exercise: :part })
+    @records = current_user.records.
+               eager_load(record_exercises: { exercise: :part })
   end
 
   def new
@@ -23,10 +23,11 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record
-              .eager_load(record_exercises: { exercise: :part })
-              .eager_load(record_exercises: :exercise_details)
-              .find(params[:id])
+    @record = Record.
+              eager_load(record_exercises: { exercise: :part }).
+              eager_load(record_exercises: :exercise_details).
+              find(params[:id])
+    @comments = current_user.comments
   end
 
   private
