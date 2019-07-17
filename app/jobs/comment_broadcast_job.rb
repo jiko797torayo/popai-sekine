@@ -2,7 +2,7 @@ class CommentBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(comment)
-    ActionCable.server.broadcast 'record_channel', comment: render_comment(comment)
+    ActionCable.server.broadcast "record_channel_#{comment.record_id}", comment: render_comment(comment)
   end
 
   private

@@ -1,4 +1,4 @@
-<%# <% if comment.user_id == current_user.id %1> %>
+<% if comment.user_id == current_user.id %>
   <div class='row pt-2 text-nomal'>
     <div class='col-1 p-0 h-100'>
     </div>
@@ -11,17 +11,17 @@
       <%= image_tag 'popaisekine.jpg', class: 'rounded-circle comment-user-image mr-1 mx-auto d-block' %>
     </div>
   </div>
-<%# <% else %1> %>
-<%#   <div class='row pt-2 text-nomal'> %>
-<%#     <div class='col-2 p-0 h-100'> %>
-<%#       <%= image_tag 'popaisekine.jpg', class: 'rounded-circle comment-trainer-image mr-1 mx-auto d-block' %1> %>
-<%#     </div> %>
-<%#     <div class='col-9 p-0 h-100'> %>
-<%#       <div class='ml-1 pt-0 pb-2 pr-2'> %>
-<%#         <%= comment.text %1> %>
-<%#       </div> %>
-<%#     </div> %>
-<%#     <div class='col-1 p-0 h-100'> %>
-<%#     </div> %>
-<%#   </div> %>
-<%# <% end %1> %>
+<% else %>
+  <div class='row pt-2 text-nomal'>
+    <div class='col-2 p-0 h-100'>
+      <%= image_tag 'popaisekine.jpg', class: 'rounded-circle comment-trainer-image mr-1 mx-auto d-block' %>
+    </div>
+    <div class='col-9 p-0 h-100'>
+      <div class='ml-1 pt-0 pb-2 pr-2'>
+        <%= comment.text %>
+      </div>
+    </div>
+    <div class='col-1 p-0 h-100'>
+    </div>
+  </div>
+<% end %>

@@ -27,7 +27,7 @@ class RecordsController < ApplicationController
               eager_load(record_exercises: { exercise: :part }).
               eager_load(record_exercises: :exercise_details).
               find(params[:id])
-    @comments = current_user.comments
+    @comments = @record.comments
   end
 
   private

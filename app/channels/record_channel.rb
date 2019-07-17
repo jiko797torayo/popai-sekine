@@ -1,14 +1,12 @@
 class RecordChannel < ApplicationCable::Channel
   def subscribed
-    stream_from 'record_channel'
+    stream_from "record_channel_#{params['record']}"
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
   end
 
   def speak(data)
-    # ActionCable.server.broadcast 'record_channel', comment: data['comment']
-    Comment.create!(text: data['comment'])
+    Comment.create!(record_id: data['record'], user_id: data['user'], text: data['comment'])
   end
 end

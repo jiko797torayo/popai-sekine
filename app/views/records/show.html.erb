@@ -45,7 +45,11 @@
             <div class='row mt-2 record-show-comment-new'>
               <%# <div class='col-10 p-0 h-100 border form-control'> %>
               <div class='col-10 p-0'>
-                <%= text_field nil, nil, 'data-behavior': 'comment_speaker', class: 'form-control h-100 border' %>
+                <%= text_field nil, nil, class: 'form-control h-100 border',
+                  'data-behavior': 'comment_speaker',
+                  'data-record': @record.id,
+                  'data-user': current_user.id
+                %>
               </div>
               <div class='col-2 p-0 h-100 text-royalgreen text-center'>
                 <i class='fas fa-paper-plane'></i>
