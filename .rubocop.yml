@@ -66,3 +66,7 @@ Style/EmptyMethod:
 # シンボル配列の書き方強制を無視
 Style/SymbolArray:
   Enabled: false
+
+# メソッドチェーンのドットの位置の指定を無視
+Layout/DotPosition:
+  Enabled: false
