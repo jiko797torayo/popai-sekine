@@ -37,6 +37,8 @@ gem 'bootsnap', require: false
 gem 'paranoia'
 gem 'cocoon'
 gem 'sentry-raven'
+gem 'redis'
+gem 'redis-rails'
 
 group :development do
   gem 'spring'

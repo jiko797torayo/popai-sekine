@@ -1280,6 +1280,23 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       optimist (~> 3.0)
+    redis (4.1.2)
+    redis-actionpack (5.0.2)
+      actionpack (>= 4.0, < 6)
+      redis-rack (>= 1, < 3)
+      redis-store (>= 1.1.0, < 2)
+    redis-activesupport (5.0.7)
+      activesupport (>= 3, < 6)
+      redis-store (>= 1.3, < 2)
+    redis-rack (2.0.5)
+      rack (>= 1.5, < 3)
+      redis-store (>= 1.2, < 2)
+    redis-rails (5.0.2)
+      redis-actionpack (>= 5.0, < 6)
+      redis-activesupport (>= 5.0, < 6)
+      redis-store (>= 1.2, < 2)
+    redis-store (1.6.0)
+      redis (>= 2.2, < 5)
     regexp_parser (1.5.1)
     representable (3.0.4)
       declarative (< 0.1.0)
@@ -1471,6 +1488,8 @@ DEPENDENCIES
   rails-controller-testing
   rails-ujs
   rails_autolink
+  redis
+  redis-rails
   rspec-rails
   rubocop
   rubocop-performance
