@@ -28,7 +28,7 @@ $(function(){
       return e.preventDefault();
     }
   });
-  $(document).on('click', '.fa-paper-plane', function(e) {
+  $('.fa-paper-plane').on('click', function(e) {
     var formText = $('[data-behavior~=comment_speaker]')
     App.record.speak(formText[0].value, formText.data('record'), formText.data('user'));
     formText[0].value = '';
