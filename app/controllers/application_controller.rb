@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :set_raven_context
 
+  def self.render_with_signed_in_user(user_id, *args)
+    user = User.find(user_id)
+    ActionController::Renderer::RACK_KEY_TRANSLATION['warden'] ||= 'warden'
+    proxy = Warden::Proxy.new({}, Warden::Manager.new({})).tap { |i| i.set_user(user, scope: :user) }
+    renderer = self.renderer.new('warden' => proxy)
+    renderer.render(*args)
+  end
+
   private
 
   def set_raven_context
