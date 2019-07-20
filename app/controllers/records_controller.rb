@@ -4,7 +4,8 @@ class RecordsController < ApplicationController
 
   def index
     @records = current_user.records.
-               eager_load(record_exercises: { exercise: :part })
+               preload(record_exercises: { exercise: :part }).
+               preload(:comments)
   end
 
   def new
