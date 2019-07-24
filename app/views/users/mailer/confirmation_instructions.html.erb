@@ -1,0 +1,9 @@
+<p>ようこそ、<%= @resource.nickname %>さん！</p>
+
+<p>下記のURLをクリックしてメール認証を完了させてください。</p>
+
+<p>
+  <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+</p>
+
+<p><%= @resource.nickname %>さんの今後のトレーニングライフが善きものになりますように...</p>

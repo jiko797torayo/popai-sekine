@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
+  mount LetterOpenerWeb::Engine, at: '/letter_opener'
 
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -10,7 +11,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    confirmations:      'users/confirmations'
   }
 
   namespace :admins do

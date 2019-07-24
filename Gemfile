@@ -39,6 +39,7 @@ gem 'cocoon'
 gem 'sentry-raven'
 gem 'redis'
 gem 'redis-rails'
+gem 'aws-ses'
 
 group :development do
   gem 'spring'
