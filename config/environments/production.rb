@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "popai-sekine_#{Rails.env}"
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'popaisekine.com' }
+  config.action_mailer.default_url_options = { host: 'www.popaisekine.com' }
   config.action_mailer.delivery_method = :ses
 
   # Ignore bad email addresses and do not raise email delivery errors.
