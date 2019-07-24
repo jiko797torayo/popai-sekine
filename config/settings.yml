@@ -1,0 +1,21 @@
+defaults: &defaults
+  service:
+    brand_name: POPAI SEKINE
+    domain: popaisekine.com
+
+  email:
+    support:   support@popaisekine.com
+    no_replay: no_replay@popaisekine.com
+    info:      info@popaisekine.com
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
