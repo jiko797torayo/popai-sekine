@@ -70,3 +70,6 @@ Style/SymbolArray:
 # メソッドチェーンのドットの位置の指定を無視
 Layout/DotPosition:
   Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false

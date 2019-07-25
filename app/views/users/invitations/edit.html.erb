@@ -1,0 +1,42 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-xl-12 mx-auto'>
+      <div id='second'>
+        <div class='myform form'>
+          <div class='logo-signup d-flex align-items-center'>
+            <div class='col-xl-12 text-center'>
+              <h1 class='text-royalgreen mb-0 align-bottom'>
+                <span class='ml-2'>POPAI</span>
+                <br>
+                <span>SEKINE</span>
+              </h1>
+            </div>
+          </div>
+          <%= form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put, class: 'new_user text-fontgray' } do |f| %>
+            <%= f.hidden_field :invitation_token, readonly: true %>
+            <%= devise_error_messages! %>
+            <div class='form-group'>
+              <%= f.label 'ニックネーム' %>
+              <%= f.text_field :nickname, autofocus: true, class: 'form-control' %>
+            </div>
+            <div class='form-group'>
+              <%= f.label 'メールアドレス' %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+            <div class='form-group'>
+              <%= f.label 'パスワード' %>
+              <%= f.password_field :password, class: 'form-control'  %>
+            </div>
+            <div class='form-group'>
+              <%= f.label 'パスワード（確認）' %><br />
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+            <div class='form-group text-center mb-3'>
+              <%= f.submit '新規登録', class: 'btn btn-block mybtn btn-royalgreen text-light' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

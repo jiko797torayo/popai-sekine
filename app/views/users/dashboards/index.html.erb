@@ -3,15 +3,17 @@
   <div class='row'>
     <div class='col-12 mx-auto record p-0'>
       <div class='record-index form text-fontgray'>
-        <div class='row bg-white p-3 mx-auto border'>
-          <div class='col-11 mx-auto h-100 p-0'>
-            <i class='fas fa-user-friends'></i>
-            あの人のトレーナーになる
+        <%= link_to new_user_invitation_path, class: 'text-fontgray text-1rem' do %>
+          <div class='row bg-white p-3 mx-auto border'>
+            <div class='col-11 mx-auto h-100 p-0'>
+              <i class='fas fa-user-friends'></i>
+              あの人のトレーナーになる
+            </div>
+            <div class='col-1 mx-auto h-100 p-0 text-right'>
+              <i class='fas fa-angle-right'></i>
+            </div>
           </div>
-          <div class='col-1 mx-auto h-100 p-0 text-right'>
-            <i class='fas fa-angle-right'></i>
-          </div>
-        </div>
+        <% end %>
         <%= link_to destroy_user_session_path, method: :delete, class: 'text-fontgray text-1rem' do %>
           <div class='row bg-white p-3 mx-auto'>
             <div class='col-11 mx-auto h-100 p-0'>

@@ -1,0 +1,19 @@
+<% provide(:title, 'あの人のトレーナーになる') %>
+<div class='container mw-1024'>
+  <div class='row'>
+    <div class='col-12 mx-auto record p-0'>
+      <div class='record-index form text-fontgray'>
+        <%# <div class='row bg-white p-3 mx-auto border rounded'> %>
+        <div class='row p-3 mx-auto'>
+          <div class='col-12 mx-auto h-100 p-0'>
+            <%= form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post, class: 'invitation' } do |f| %>
+              <%= f.label 'メールアドレス' %>
+              <%= f.email_field :email, class: 'form-control mb-3' %>
+              <%= f.submit '送信', class: 'btn btn-block mybtn btn-royalgreen text-light' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
