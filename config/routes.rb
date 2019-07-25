@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   namespace :users do
     root to: 'records#index'
+    resources :dashboards, only: :index
     resources :records
     resources :parts, only: [] do
       resources :exercises, only: :index
