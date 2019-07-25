@@ -1,6 +1,6 @@
 <div class='container text-light mw-1024'>
   <div class='text-light'>
-    <%= form_for record do |f| %>
+    <%= form_for record, url: users_records_path do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <div>
         <%= f.fields_for :record_exercises do |record_exercise| %>

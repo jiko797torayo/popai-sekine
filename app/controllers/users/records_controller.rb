@@ -1,6 +1,4 @@
-class RecordsController < ApplicationController
-  layout 'users'
-  before_action :authenticate_user!
+class Users::RecordsController < UsersController
 
   def index
     @records = current_user.records.

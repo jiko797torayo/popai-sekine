@@ -15,6 +15,14 @@ Rails.application.routes.draw do
     confirmations:      'users/confirmations'
   }
 
+  namespace :users do
+    root to: 'records#index'
+    resources :records
+    resources :parts, only: [] do
+      resources :exercises, only: :index
+    end
+  end
+
   namespace :admins do
     root to: 'dashboards#index'
     resources :exercises
@@ -22,9 +30,5 @@ Rails.application.routes.draw do
   end
 
   get '/health', controller: :elb, action: :health
-  root to: 'records#index'
-  resources :records
-  resources :parts, only: [] do
-    resources :exercises, only: :index
-  end
+  root to: 'users/records#index'
 end
