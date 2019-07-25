@@ -8,6 +8,6 @@ class CommentBroadcastJob < ApplicationJob
   private
 
   def render_comment(comment)
-    ApplicationController.render_with_signed_in_user(comment.user_id, 'comments/_comment.html.erb', locals: { comment: comment })
+    ApplicationController.render_with_signed_in_user(comment.user_id, 'users/comments/_comment.html.erb', locals: { comment: comment })
   end
 end
