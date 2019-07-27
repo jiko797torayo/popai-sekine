@@ -1,4 +1,5 @@
 $(function(){
+  console.log(1);
   App.record = App.cable.subscriptions.create({
     channel: 'RecordChannel',
     record: $('[data-behavior~=comment_speaker]').data('record')
