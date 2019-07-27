@@ -22,6 +22,12 @@ Rails.application.routes.draw do
     resources :parts, only: [] do
       resources :exercises, only: :index
     end
+    resources :trainer_requests, only: [:new, :create] do
+      collection do
+        get :confirm
+        patch :accept
+      end
+    end
   end
 
   namespace :admins do

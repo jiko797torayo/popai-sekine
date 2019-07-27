@@ -5,7 +5,7 @@ defaults: &defaults
 
   email:
     support:   support@popaisekine.com
-    no_replay: no_replay@popaisekine.com
+    no_reply: no_reply@popaisekine.com
     info:      info@popaisekine.com
 
 development:
