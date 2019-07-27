@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     Raven.user_context(id: current_user&.id, email: current_user&.email)
     Raven.extra_context(params: params.to_unsafe_h, url: request.url)
   end
+
+  def store_current_location
+    store_location_for(:user, request.url)
+  end
 end

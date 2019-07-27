@@ -1,0 +1,22 @@
+<% provide(:title, 'トレーナーになってもらう') %>
+<div class='container mw-1024'>
+  <div class='row'>
+    <div class='col-12 mx-auto record p-0'>
+      <div class='record-index form text-fontgray trainer-confirm'>
+        <div class='row mx-auto'>
+          <div class='col-12 mx-auto h-100 p-0'>
+            <div class='row bg-white p-3 trainer-confirm-content mx-auto'>
+              <div class='col-12 mx-auto p-0 pt-1 text-royalgreen text-center'>
+                <%= image_tag 'popaisekine.jpg', class: 'rounded-circle trainer-image mx-auto d-block' %>
+                <span class='text-fontgray'>
+                  <%= @trainer_request.trainer.nickname %>
+                </span>
+                <%= link_to 'トレーナーになってもらう', accept_users_trainer_requests_path(request_token: @trainer_request.request_token), method: :patch, class: 'btn btn-block mybtn btn-royalgreen text-light mt-3' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

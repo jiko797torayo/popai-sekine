@@ -70,3 +70,8 @@ Style/SymbolArray:
 # メソッドチェーンのドットの位置の指定を無視
 Layout/DotPosition:
   Enabled: false
+
+# InverseOfの指定を無視
+Rails/InverseOf:
+  Enabled: false
+

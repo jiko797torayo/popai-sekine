@@ -17,7 +17,7 @@ $whitegray: #F5F5F5;
   color: $royalgreen;
 }
 .text-fontgray {
-  color: $fontgray;
+  color: $fontgray !important;
 }
 .text-icongray {
   color: $icongray;
@@ -28,4 +28,7 @@ $whitegray: #F5F5F5;
 .mono {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+}
+.text-1rem {
+  font-size: 1rem !important;
 }
