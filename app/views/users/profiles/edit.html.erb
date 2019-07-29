@@ -1,0 +1,39 @@
+<% provide(:title, 'プロフィール変更') %>
+<div class='container mw-1024'>
+  <div class='row'>
+    <div class='col-12 mx-auto record p-0'>
+      <div class='record-index form text-fontgray trainer-confirm'>
+        <div class='row mx-auto'>
+          <div class='col-12 mx-auto h-100 p-0'>
+            <div class='row bg-white p-3 trainer-confirm-content mx-auto'>
+              <div class='col-12 mx-auto p-0 pt-1 text-royalgreen'>
+                <%= form_for current_user, url: users_profile_path do |f| %>
+                  <div class='row '>
+                    <div class='col-12 mx-auto'>
+                      <%= f.label 'ニックネーム', class: 'text-fontgray' %>
+                      <%= f.text_field :nickname, autofocus: true, class: 'form-control' %>
+                      <%= f.label 'プロフィール画像', class: 'text-fontgray' %>
+                      <br>
+                      <% if f.object.icon_image && f.object.icon_image.url %>
+                        <%= image_tag f.object.icon_image_url(:thumb), class: 'icon-image w-100 mb-3' %>
+                      <% else %>
+                        <%= image_tag 'noimage.png', class: 'icon-image w-100 mb-3' %>
+                      <% end %>
+                      <%= f.file_field :icon_image, class: 'hidden' %>
+                      <br>
+                      <% if f.object.icon_image && f.object.icon_image.url %>
+                        <%= f.check_box :remove_icon_image %>
+                        <%= f.label '削除', class: 'text-fontgray' %>
+                      <% end %>
+                      <%= f.submit '更新', class: 'btn btn-block mybtn btn-royalgreen text-light' %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

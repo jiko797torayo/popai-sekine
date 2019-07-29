@@ -18,3 +18,4 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require record
+//= require image_upload

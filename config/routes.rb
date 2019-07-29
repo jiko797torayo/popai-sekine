@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :dashboards, only: :index
     resources :records
     resources :client_records, only: [:index, :show]
+    resource :profile, only: [:edit, :update]
     resources :parts, only: [] do
       resources :exercises, only: :index
     end

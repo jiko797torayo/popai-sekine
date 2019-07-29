@@ -1,0 +1,23 @@
+<% selected_image = "selected_#{obj_type}_image_1" %>
+<div class='form-group'>
+  <label class='col-sm-2 control-label'>
+    Image
+  </label>
+
+  <div class='col-sm-10'>
+    <% if obj.image_1 && obj.image_1.url %>
+      <%= image_tag obj.image_1_url(:thumb), class: selected_image %>
+    <% else %>
+      <%= image_tag 'noimage.png', class: selected_image, size: '300x200' %>
+    <% end %>
+    <%= f.file_field :"image_1", class: 'hidden' %>
+    <br>
+    <% if obj.image_1 && obj.image_1.url %>
+      <%= f.check_box :"remove_image_1" %>
+      <label>
+        Delete
+      </label>
+    <% end %>
+  </div>
+</div>
+
