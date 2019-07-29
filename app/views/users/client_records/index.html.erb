@@ -1,4 +1,4 @@
-<% provide(:title, 'マイレコード') %>
+<% provide(:title, 'クライアントレコード') %>
 <div class='container mw-1024'>
   <div class='row'>
     <div class='col-12 mx-auto record p-0'>
@@ -6,6 +6,12 @@
         <% @records.each do |record| %>
           <%= link_to users_record_path(record) do %>
             <div class='row bg-white p-3 record-row mx-auto'>
+              <div class='col-3 mx-auto p-0 pr-2 pt-1'>
+                <%= image_tag 'popaisekine.jpg', class: 'rounded-circle trainer-image mx-auto d-block mono' %>
+                <p class='text-fontgray text-center mb-0'>
+                  <%= record.user.nickname %>
+                </p>
+              </div>
               <div class='col-2 mx-auto p-0 pt-1 text-royalgreen text-center record-row-day'>
                 <%= record.created_at.strftime('%a').upcase %>
                 <br>
@@ -23,9 +29,6 @@
                     <% end %>
                   <% end %>
                 </ul>
-              </div>
-              <div class='col-3 mx-auto p-0 pr-2 pl-1 pt-1'>
-                <%= image_tag 'popaisekine.jpg', class: 'rounded-circle trainer-image mx-auto d-block mono' %>
               </div>
               <div class='col-2 mx-auto p-0 pt-1 pl-1 text-center h-100 comment-icon'>
                 <% if record.comments.any? %>
