@@ -28,13 +28,17 @@
   .footer-icon {
     height: 1.5rem;
     line-height: 2rem;
-    .fa-list-alt, .fa-cog {
-      font-size: 1rem;
-    }
+  }
+  .fa-list-alt, .fa-cog {
+    font-size: 1rem;
   }
   .footer-text {
     height: 1.5rem;
     line-height: 1.5rem;
+    font-size: 0.5rem;
+  }
+  .footer-text-record {
+    line-height: 0.7rem;
     font-size: 0.5rem;
   }
 }
