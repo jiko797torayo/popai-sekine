@@ -1,0 +1,2 @@
+class UserIconImageUploader < UploaderBase
+end

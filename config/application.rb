@@ -9,6 +9,7 @@ module PopaiSekine
     config.load_defaults 5.2
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+    config.paths.add 'uploaders', eager_load: true
 
     config.generators do |g|
       g.javascripts false

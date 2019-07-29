@@ -14,6 +14,17 @@
             </div>
           </div>
         <% end %>
+        <%= link_to edit_users_profile_path, class: 'text-fontgray text-1rem' do %>
+          <div class='row bg-white p-3 mx-auto border'>
+            <div class='col-11 mx-auto h-100 p-0'>
+              <i class='far fa-address-card'></i>
+              プロフィールを変更する
+            </div>
+            <div class='col-1 mx-auto h-100 p-0 text-right'>
+              <i class='fas fa-angle-right'></i>
+            </div>
+          </div>
+        <% end %>
         <%= link_to destroy_user_session_path, method: :delete, class: 'text-fontgray text-1rem' do %>
           <div class='row bg-white p-3 mx-auto'>
             <div class='col-11 mx-auto h-100 p-0'>
