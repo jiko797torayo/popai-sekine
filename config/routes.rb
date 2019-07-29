@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     root to: 'records#index'
     resources :dashboards, only: :index
     resources :records
+    resources :client_records, only: [:index, :show]
     resources :parts, only: [] do
       resources :exercises, only: :index
     end
