@@ -7,7 +7,7 @@
           <%= link_to users_record_path(record) do %>
             <div class='row bg-white p-3 record-row mx-auto'>
               <div class='col-3 mx-auto p-0 pr-2 pt-1'>
-                <% if record.user.icon_image %>
+                <% if record.user.icon_image.present? %>
                   <%= image_tag record.user.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block' %>
                 <% else %>
                   <%= image_tag 'noimage.png', class: 'rounded-circle trainer-image mx-auto d-block' %>
