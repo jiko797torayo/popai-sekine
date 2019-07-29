@@ -2,7 +2,8 @@ class Users::RecordsController < UsersController
   def index
     @records = current_user.records.
                preload(record_exercises: { exercise: :part }).
-               preload(:comments)
+               preload(:comments).
+               preload(:user)
   end
 
   def new
