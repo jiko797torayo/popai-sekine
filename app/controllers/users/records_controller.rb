@@ -4,6 +4,7 @@ class Users::RecordsController < UsersController
                preload(record_exercises: { exercise: :part }).
                preload(:comments).
                preload(:user)
+    @trainer = User.find(current_user.trainer_id) if current_user.trainer_id
   end
 
   def new
