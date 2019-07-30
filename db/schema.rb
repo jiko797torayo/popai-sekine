@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_114126) do
+ActiveRecord::Schema.define(version: 2019_07_30_124648) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_114126) do
     t.integer "record_id"
     t.integer "user_id"
     t.text "text"
-    t.datetime "confirmation_at"
+    t.datetime "receiver_confirmed_at"
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

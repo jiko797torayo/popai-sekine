@@ -20,14 +20,6 @@ $(function(){
 });
 
 $(function(){
-  $(document).on('keypress', '[data-behavior~=comment_speaker]', function(e) {
-    if (e.keyCode === 13) {
-      var formText = $('[data-behavior~=comment_speaker]')
-      App.record.speak(e.target.value, formText.data('record'), formText.data('user'));
-      e.target.value = '';
-      return e.preventDefault();
-    }
-  });
   $('.fa-paper-plane').on('click', function(e) {
     var formText = $('[data-behavior~=comment_speaker]')
     App.record.speak(formText[0].value, formText.data('record'), formText.data('user'));
