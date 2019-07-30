@@ -4,9 +4,16 @@
     <div class='col-12 mx-auto record p-0'>
       <div class='record-index form pb-2'>
         <% @records.each do |record| %>
-          <%= link_to users_record_path(record) do %>
-            <div class='row bg-white p-3 record-row mx-auto'>
+          <%= link_to users_client_record_path(record) do %>
+            <% if record.trainer_confirmed_at %>
+              <div class='row bg-white p-3 record-row mx-auto'>
+            <% else %>
+              <div class='row bg-white p-3 record-row mx-auto record-not-confirm'>
+            <% end %>
               <div class='col-3 mx-auto p-0 pr-2 pt-1'>
+                <% unless record.trainer_confirmed_at %>
+                  <span class='text-danger record-not-confirm-notice'>new!</span>
+                <% end %>
                 <% if record.user.icon_image.present? %>
                   <%= image_tag record.user.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block' %>
                 <% else %>
@@ -43,6 +50,7 @@
               </div>
             </div>
           <% end %>
+
         <% end %>
       </div>
       <div class='record-new rounded-circle bg-royalgreen'>

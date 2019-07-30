@@ -12,6 +12,7 @@ class Users::ClientRecordsController < UsersController
               eager_load(record_exercises: { exercise: :part }).
               eager_load(record_exercises: :exercise_details).
               find(params[:id])
+    @record.update(trainer_confirmed_at: Time.zone.now)
     @comments = @record.comments
   end
 end
