@@ -7,6 +7,7 @@ class Users::ClientRecordsController < UsersController
                preload(record_exercises: { exercise: :part }).
                preload(:comments).
                preload(:user)
+    @not_confirm_comment_exit_record = Comment.where.not(user_id: current_user.id).where(receiver_confirmed_at: nil).map(&:record_id).uniq!
   end
 
   def show
