@@ -1,4 +1,3 @@
 class Users::DashboardsController < UsersController
-  def index
-  end
+  before_action :comment_confirm, only: [:index]
 end

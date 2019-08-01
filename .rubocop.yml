@@ -53,7 +53,7 @@ Style/FrozenStringLiteralComment:
 # ABC sizeの設定
 Metrics/AbcSize:
   Enabled: true
-  Max: 20
+  Max: 22
 
 # html_safeを許可
 Rails/OutputSafety:

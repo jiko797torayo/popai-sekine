@@ -1,4 +1,6 @@
 class Users::ClientRecordsController < UsersController
+  before_action :comment_confirm, only: [:index]
+
   def index
     @clients = User.where(trainer_id: current_user.id)
     @records = Record.where(user_id: @clients.ids).
