@@ -33,7 +33,15 @@
               </div>
               <div class='col-2 mx-auto p-0 pt-1 pl-1 text-center h-100 comment-icon'>
                 <% if record.comments.any? %>
-                  <i class='fas fa-comment-alt text-royalgreen'></i>
+                  <div class='comment-icon-inner'>
+                    <i class='fas fa-comment-alt text-royalgreen'></i>
+                    <% if record.id.in?(@not_confirm_comment_exit_record || []) %>
+                      <div class='not-confirm-comment-exit'>
+                        <div class='bg-danger rounded-circle not-confirm-comment-exit-inner'>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
                 <% else %>
                   <i class='fas fa-comment-alt text-icongray'></i>
                 <% end %>

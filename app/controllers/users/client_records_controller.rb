@@ -1,10 +1,13 @@
 class Users::ClientRecordsController < UsersController
+  before_action :comment_confirm, only: [:index]
+
   def index
     @clients = User.where(trainer_id: current_user.id)
     @records = Record.where(user_id: @clients.ids).
                preload(record_exercises: { exercise: :part }).
                preload(:comments).
                preload(:user)
+    @not_confirm_comment_exit_record = Comment.where.not(user_id: current_user.id).where(receiver_confirmed_at: nil).map(&:record_id).uniq!
   end
 
   def show
