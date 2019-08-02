@@ -1,4 +1,10 @@
 $(function(){
+  // レコードアクセス時に最新のコメントを表示させる
+  var obj = document.getElementById('comments');
+  if (obj) {
+    obj.scrollTop = obj.scrollHeight;
+  }
+
   // 種目追加時に種目数を設定する
   $(document).on('click', '.add-exercise', function() {
     var exerciseCount = $(this).closest('#record_exercises').children('.nested-fields').length;
