@@ -13,11 +13,7 @@
                 </div>
               </div>
             </div>
-            <% if comments %>
-              <div class='row record-show-detail'>
-            <% else %>
-              <div class='row record-show-detail full-detail'>
-            <% end %>
+            <div class='row record-show-detail'>
               <div class='col-12 p-0'>
                 <% record.record_exercises.each do |record_exercise| %>
                   <div class='row'>
@@ -33,11 +29,7 @@
                 <% end %>
               </div>
             </div>
-            <% if comments %>
-              <div class='row record-show-comment border-top border-bottom'>
-            <% else %>
-              <div class='row record-show-comment border-top border-bottom d-none'>
-            <% end %>
+            <div class='row record-show-comment border-top border-bottom'>
               <div id='comments' class='col-12 p-0 h-100 record-show-comment-outer'>
                 <%= render comments, record: record %>
               </div>
