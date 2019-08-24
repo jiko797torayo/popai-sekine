@@ -5,6 +5,7 @@
       <div class='row'>
         <div class='col-12 mx-auto record p-0'>
           <div class='record-form form' id='record_exercises'>
+            <%= print_validation_error(record) %>
             <%= f.fields_for :record_exercises do |record_exercise| %>
               <%= render 'record_exercise_fields', f: record_exercise %>
             <% end %>
