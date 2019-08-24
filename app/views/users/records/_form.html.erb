@@ -2,14 +2,12 @@
   <div class='text-light'>
     <%= form_for record, url: users_records_path do |f| %>
       <%= f.hidden_field :user_id, value: current_user.id %>
-      <div>
-        <%= f.fields_for :record_exercises do |record_exercise| %>
-          <%= render 'record_exercise_fields', f: record_exercise %>
-        <% end %>
-      </div>
       <div class='row'>
         <div class='col-12 mx-auto record p-0'>
           <div class='record-form form' id='record_exercises'>
+            <%= f.fields_for :record_exercises do |record_exercise| %>
+              <%= render 'record_exercise_fields', f: record_exercise %>
+            <% end %>
             <div class='links record-exercise-links'>
               <%= link_to_add_association '次の種目を追加', f, :record_exercises, class: 'add-exercise btn btn-block btn-royalgreen text-light' %>
             </div>
