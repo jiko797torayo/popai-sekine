@@ -6,5 +6,5 @@ class Record < ApplicationRecord
   accepts_nested_attributes_for :record_exercises, reject_if: :all_blank, allow_destroy: true
   has_many :comments, dependent: :destroy
 
-  validates :record_exercises, presence: true, length: { minimum: 1 }
+  validates :record_exercises, presence: true
 end
