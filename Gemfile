@@ -40,6 +40,7 @@ gem 'sentry-raven'
 gem 'redis'
 gem 'redis-rails'
 gem 'aws-ses'
+gem 'rails-i18n'
 
 group :development do
   gem 'spring'

@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      record: レコード
+    attributes:
+      record:
+        record_exercises: 種目
+    errors:
+      models:
+        record:
+          attributes:
+            record_exercises:
+              blank: を1つ以上入力してください

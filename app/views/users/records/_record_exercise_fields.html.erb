@@ -16,6 +16,7 @@
       <div class='col-7 p-0 pl-2'>
         <% exercises = [] %>
         <% exercise_options = exercises.map { |e| [e.name, e.id] } %>
+        <% exercise_options << [f.object.exercise.name, f.object.exercise.id] if f.object.exercise %>
         <%= f.select :exercise_id, exercise_options, { prompt: '--' }, class: 'select-children form-control exercise-form' %>
       </div>
       <div class='col-1 p-0'>

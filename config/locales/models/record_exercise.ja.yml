@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      record_exercise: 種目
+    attributes:
+      record_exercises:
+        part: 部位
+        exercise: 種目名
+        exercise_details: セット内容
+    errors:
+      models:
+        record_exercise:
+          attributes:
+            exercise_details:
+              blank: を1つ以上入力してください
+
