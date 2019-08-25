@@ -10,4 +10,4 @@ ja:
         record:
           attributes:
             record_exercises:
-              blank: を追加してください
+              blank: を1つ以上入力してください
