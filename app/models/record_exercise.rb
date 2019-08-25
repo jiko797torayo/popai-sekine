@@ -1,6 +1,8 @@
 class RecordExercise < ApplicationRecord
   acts_as_paranoid
 
+  attr_accessor :exercise_options
+
   belongs_to :record
   belongs_to :exercise
   belongs_to :part
