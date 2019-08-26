@@ -13,7 +13,7 @@
                 </div>
               </div>
             </div>
-            <div class='row record-show-detail'>
+            <div class='row record-show-detail' id='record-show-detail'>
               <div class='col-12 p-0'>
                 <% record.record_exercises.each do |record_exercise| %>
                   <div class='row'>
@@ -29,7 +29,10 @@
                 <% end %>
               </div>
             </div>
-            <div class='row record-show-comment border-top border-bottom'>
+            <div class='accordion-btn border-top accordion-down' id='comment-accordion'>
+              <div class='down-triangle mx-auto' id='comment-accordion-triangle'></div>
+            </div>
+            <div class='row record-show-comment border-top border-bottom' id='record-show-comment'>
               <div id='comments' class='col-12 p-0 h-100 record-show-comment-outer'>
                 <%= render comments, record: record %>
               </div>

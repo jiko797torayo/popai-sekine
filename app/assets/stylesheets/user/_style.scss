@@ -296,7 +296,7 @@ input {
     height: 40px;
   }
   .record-show-detail, .record-show-comment-outer {
-    height: calc(50% - 50px);
+    // height: calc(50% - 40px);
     overflow-y: scroll;
     background:
       /* Shadow covers */
@@ -309,6 +309,12 @@ input {
     // background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
     background-size: 100% 40px, 100% 40px, 100% 5px, 100% 5px;
     background-attachment: local, local, scroll, scroll;
+  }
+  .record-show-detail {
+    height: calc(50% - 65px);
+  }
+  .record-show-comment-outer {
+    height: calc(50% - 65px);
   }
   .full-detail {
     height: calc(100% - 100px);
@@ -350,9 +356,37 @@ input {
     width: calc(100vw - 1rem);
     max-width: 500px;
     border-radius: 1rem;
-    // height: 101px;
   }
   input#user_icon_image {
     display: none;
+  }
+  .accordion-btn {
+    height: 15px;
+    width: 100%;
+  }
+  .accordion-down {
+    padding-top: 3px;
+  }
+  .accordion-up {
+  }
+  .down-triangle {
+    width: 10px;
+    border-top: 6px solid $fontgray;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid transparent;
+  }
+  .up-triangle {
+    width: 10px;
+    border-top: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid $fontgray;
+    border-left: 6px solid transparent;
+  }
+  .comment-close {
+    height: 0;
+  }
+  .detail-open {
+    height: calc(100% - 117px);
   }
 }

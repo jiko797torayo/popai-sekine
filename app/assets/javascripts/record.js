@@ -86,3 +86,23 @@ $(function(){
   $('add-exercise').removeAttr('data-disable-with')
 });
 
+// コメント欄の開け閉め
+$(function(){
+  $('#comment-accordion').click(function() {
+    if ($(this).hasClass('accordion-down')) {
+      $(this).removeClass('accordion-down');
+      $(this).addClass('accordion-up');
+      $('#record-show-comment').addClass('comment-close');
+      $('#record-show-detail').addClass('detail-open');
+      $('#comment-accordion-triangle').removeClass('down-triangle');
+      $('#comment-accordion-triangle').addClass('up-triangle');
+    } else {
+      $(this).removeClass('accordion-up');
+      $(this).addClass('accordion-down');
+      $('#record-show-comment').removeClass('comment-close');
+      $('#record-show-detail').removeClass('detail-open');
+      $('#comment-accordion-triangle').removeClass('up-triangle');
+      $('#comment-accordion-triangle').addClass('down-triangle');
+    }
+  });
+});
