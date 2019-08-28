@@ -8,7 +8,7 @@
             <%= form_for @trainer_request, url: users_trainer_requests_path, html: { method: :post } do |f| %>
               <%= print_validation_errors(@trainer_request) %>
               <%= f.label 'メールアドレス' %>
-              <%= f.email_field :email, class: 'form-control mb-3' %>
+              <%= f.email_field :email, class: 'form-control mb-3', required: true %>
               <%= f.submit 'あの人のトレーナーになる', class: 'btn btn-block mybtn btn-royalgreen text-light' %>
             <% end %>
           </div>

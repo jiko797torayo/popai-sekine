@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     before_path = begin
                     Rails.application.routes.recognize_path(request.referer)
                   rescue StandardError
-                    false
+                    return false
                   end
     return false unless before_path[:controller].in?(['users/records', 'users/client_records'])
     return false unless before_path[:action].eql?('show')

@@ -8,7 +8,7 @@ module ApplicationHelper
     end
   end
 
-  def print_validation_error(object)
+  def print_validation_errors(object)
     content_tag(:ul, '') do
       object.errors.full_messages.map { |message| content_tag(:li, message) }.join.html_safe
     end
