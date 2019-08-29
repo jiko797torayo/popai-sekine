@@ -26,9 +26,7 @@
               </div>
               <div class='col-3 mx-auto p-0 pr-2 pl-1 pt-1'>
                 <% if @trainer && @trainer.icon_image.present? %>
-                  <div class='rounded-circle trainer-image mx-auto d-block mono'>
-                    <%= image_tag @trainer.icon_image_url(:small) %>
-                  </div>
+                  <%= image_tag @trainer.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block mono' %>
                 <% else %>
                   <%= image_tag 'noimage.png', class: 'rounded-circle trainer-image mx-auto d-block mono' %>
                 <% end %>
