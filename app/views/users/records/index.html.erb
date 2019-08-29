@@ -29,7 +29,16 @@
                   <p class='text-fontgray text-center mb-0 record-trainer-title'>
                     トレーナー
                   </p>
-                  <%= image_tag @trainer.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block mono' %>
+                  <% if record.trainer_confirmed_at %>
+                    <%= image_tag @trainer.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block' %>
+                  <% else %>
+                    <div class='rounded-circle trainer-image mx-auto d-block trainer-not-confirm'>
+                      <p class='text-light text-center mb-0 trainer-not-confirm-text'>
+                        未読
+                      </p>
+                    </div>
+                    <%= image_tag @trainer.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block mono' %>
+                  <% end %>
                   <p class='text-fontgray text-center mb-0 record-trainer-name'>
                     <%= @trainer.nickname %>
                   </p>
