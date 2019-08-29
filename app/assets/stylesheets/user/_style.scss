@@ -272,8 +272,12 @@ input {
     }
   }
   .trainer-image {
-    max-height: 60px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 60px;
     width: 60px;
+    overflow: hidden;
   }
   .record-new {
     position: absolute;
@@ -388,5 +392,23 @@ input {
   }
   .detail-open {
     height: calc(100% - 117px);
+  }
+  .record-trainer-title, .record-trainer-name, .record-client-name {
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+  .record-trainer-title {
+    top: -12px;
+  }
+  .trainer-not-confirm-text {
+    line-height: 60px;
+  }
+  .record-trainer-name, .record-client-name {
+    bottom: -12px;
+  }
+  .trainer-not-confirm {
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
   }
 }

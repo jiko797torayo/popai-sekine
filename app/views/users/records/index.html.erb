@@ -26,9 +26,30 @@
               </div>
               <div class='col-3 mx-auto p-0 pr-2 pl-1 pt-1'>
                 <% if @trainer && @trainer.icon_image.present? %>
-                  <%= image_tag @trainer.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block mono' %>
+                  <p class='text-fontgray text-center mb-0 record-trainer-title'>
+                    トレーナー
+                  </p>
+                  <% if record.trainer_confirmed_at %>
+                    <%= image_tag @trainer.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block' %>
+                  <% else %>
+                    <div class='rounded-circle trainer-image mx-auto d-block trainer-not-confirm'>
+                      <p class='text-light text-center mb-0 trainer-not-confirm-text'>
+                        未読
+                      </p>
+                    </div>
+                    <%= image_tag @trainer.icon_image_url(:small), class: 'rounded-circle trainer-image mx-auto d-block mono' %>
+                  <% end %>
+                  <p class='text-fontgray text-center mb-0 record-trainer-name'>
+                    <%= @trainer.nickname %>
+                  </p>
                 <% else %>
+                  <p class='text-fontgray text-center mb-0 record-trainer-title'>
+                    トレーナー
+                  </p>
                   <%= image_tag 'noimage.png', class: 'rounded-circle trainer-image mx-auto d-block mono' %>
+                  <p class='text-fontgray text-center mb-0 record-trainer-name'>
+                    未設定
+                  </p>
                 <% end %>
               </div>
               <div class='col-2 mx-auto p-0 pt-1 pl-1 text-center h-100 comment-icon'>
