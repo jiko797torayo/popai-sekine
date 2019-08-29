@@ -272,8 +272,9 @@ input {
     }
   }
   .trainer-image {
-    max-height: 60px;
+    height: 60px;
     width: 60px;
+    overflow: hidden;
   }
   .record-new {
     position: absolute;
