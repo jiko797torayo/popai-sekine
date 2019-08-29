@@ -390,4 +390,12 @@ input {
   .detail-open {
     height: calc(100% - 117px);
   }
+  .record-trainer-title, .record-trainer-name {
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+  .record-trainer-title {
+    top: -12px;
+  }
 }
