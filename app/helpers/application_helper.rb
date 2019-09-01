@@ -13,4 +13,22 @@ module ApplicationHelper
       object.errors.full_messages.map { |message| content_tag(:li, message) }.join.html_safe
     end
   end
+
+  def print_messages
+    messages = []
+
+    if flash[:notice]
+      messages << content_tag(:div, '', class: 'flash') do
+        content_tag(:p, flash[:notice], class: 'notice')
+      end
+    end
+
+    if flash[:alert]
+      messages << content_tag(:div, '', class: 'flash') do
+        content_tag(:p, flash[:alert], class: 'alert')
+      end
+    end
+
+    messages.join.html_safe
+  end
 end

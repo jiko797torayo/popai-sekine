@@ -3,6 +3,7 @@
     <div class='col-xl-12 mx-auto'>
       <div id='second'>
         <div class='myform form'>
+          <%= print_messages %>
           <div class='logo-signin d-flex align-items-center'>
             <div class='col-xl-12 text-center'>
               <h1 class='text-royalgreen mb-0 align-bottom'>
@@ -13,6 +14,7 @@
             </div>
           </div>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'text-fontgray') do |f| %>
+            <%= print_messages %>
             <%= devise_error_messages! %>
             <div class='form-group'>
               <%= f.label 'メールアドレス' %>
