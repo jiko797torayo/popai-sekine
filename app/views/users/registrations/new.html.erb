@@ -13,6 +13,7 @@
             </div>
           </div>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'text-fontgray') do |f| %>
+            <%= print_messages %>
             <%= devise_error_messages! %>
             <div class='form-group'>
               <%= f.label 'ニックネーム' %>
