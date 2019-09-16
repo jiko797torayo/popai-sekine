@@ -56,9 +56,6 @@
 a {
   text-decoration:none !important;
 }
-h1,h2,h3, .puente-bold {
-  font-family: 'Puente-Bold', 'arial black', 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'ヒラギノ角ゴ Pro W3', 'メイリオ', sans-serif;
-}
 h1 {
   font-size: 15vmin;
 }
@@ -109,7 +106,6 @@ input {
   margin: auto;
   font-size: 60px;
   color: white;
-  font-family: 'Puente-Bold';
   &:hover {
     color: $royalgreen;
   }
