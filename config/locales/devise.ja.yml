@@ -14,7 +14,7 @@ ja:
       locked: アカウントはロックされました。
       not_found_in_database: "%{authentication_keys}かパスワードが誤っています。"
       timeout: セッションの有効期限が切れました。続行するには再度ログインしてください。
-      unauthenticated: メールをチェックして、登録を完了させてください。
+      unauthenticated: ログインまたは新規登録をしてください。
       unconfirmed: メール認証が行われていません。メールをチェックして、登録を完了させてください。
     mailer:
       confirmation_instructions:
