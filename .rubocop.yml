@@ -26,13 +26,14 @@ Rails:
 Metrics/ClassLength:
   Max: 100
 
-# １行の文字数を制限しない
+# １行の文字数を80字に制限
 Metrics/LineLength:
-  Enabled: false
+  Max: 80
 
-# １メソッドの行数を制限しない
+# １メソッドの行数を10行に制限
 Metrics/MethodLength:
-  Enabled: false
+  CountComments: true
+  Max: 10
 
 # 日本語コメントを許す
 Style/AsciiComments:
@@ -59,17 +60,13 @@ Metrics/AbcSize:
 Rails/OutputSafety:
   Enabled: false
 
-# 空のメソッドを許可
-Style/EmptyMethod:
-  Enabled: false
-
 # シンボル配列の書き方強制を無視
 Style/SymbolArray:
   Enabled: false
 
 # メソッドチェーンのドットの位置の指定を無視
 Layout/DotPosition:
-  Enabled: false
+  EnforcedStyle: trailing
 
 # InverseOfの指定を無視
 Rails/InverseOf:
