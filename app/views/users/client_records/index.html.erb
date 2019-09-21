@@ -45,7 +45,7 @@
                 <% if record.comments.any? %>
                   <div class='comment-icon-inner'>
                     <i class='fas fa-comment-alt text-royalgreen'></i>
-                    <% if record.id.in?(@not_confirm_comment_exit_record || []) %>
+                    <% if record.id.in?(@new_comment_exist_records_ids || []) %>
                       <div class='not-confirm-comment-exit'>
                         <div class='bg-danger rounded-circle not-confirm-comment-exit-inner'>
                         </div>
