@@ -24,7 +24,7 @@ Rails:
 
 # １クラスの行数を200行以下に制限する
 Metrics/ClassLength:
-  Max: 200
+  Max: 100
 
 # １行の文字数を制限しない
 Metrics/LineLength:
@@ -53,7 +53,7 @@ Style/FrozenStringLiteralComment:
 # ABC sizeの設定
 Metrics/AbcSize:
   Enabled: true
-  Max: 22
+  Max: 18
 
 # html_safeを許可
 Rails/OutputSafety:
