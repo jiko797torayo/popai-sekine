@@ -34,7 +34,7 @@
             </div>
             <div class='row record-show-comment border-top border-bottom' id='record-show-comment'>
               <div id='comments' class='col-12 p-0 h-100 record-show-comment-outer'>
-                <%= render comments, record: record %>
+                <%= render partial: 'users/comments/comment', collection: record.comments %>
               </div>
             </div>
             <div class='row mt-2 record-show-comment-new'>

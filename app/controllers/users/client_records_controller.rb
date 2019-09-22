@@ -10,10 +10,11 @@ class Users::ClientRecordsController < UsersController
 
   def show
     @record = Record.
-              eager_load(record_exercises: { exercise: :part }).
-              eager_load(record_exercises: :exercise_details).
+              preload(comments: :user,
+                      record_exercises: [:exercise_details, exercise: :part]).
               find(params[:id])
+    return if @record.trainer_confirmed_at
+
     @record.update(trainer_confirmed_at: Time.zone.now)
-    @comments = @record.comments
   end
 end

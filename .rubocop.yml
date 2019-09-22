@@ -28,7 +28,7 @@ Metrics/ClassLength:
 
 # １行の文字数を80字に制限
 Metrics/LineLength:
-  Max: 80
+  Max: 85
 
 # １メソッドの行数を10行に制限
 Metrics/MethodLength:
