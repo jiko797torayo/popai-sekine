@@ -1,6 +1,6 @@
 class Users::ExercisesController < UsersController
   def index
-    part = Part.find(params[:part_id])
-    render json: part.exercises.select(:id, :name)
+    exercises = Exercise.where(part_id: params[:part_id])
+    render json: exercises.select(:id, :name)
   end
 end
