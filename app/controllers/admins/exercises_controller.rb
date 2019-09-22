@@ -20,8 +20,7 @@ class Admins::ExercisesController < AdminsController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @obj.update(exercise_params)
