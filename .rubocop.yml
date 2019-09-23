@@ -71,3 +71,7 @@ Layout/DotPosition:
 Rails/InverseOf:
   Enabled: false
 
+# 基本的にvalidationはskipしない
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'app/controllers/users_controller.rb'
