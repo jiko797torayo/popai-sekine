@@ -24,10 +24,9 @@ class Users::RecordsController < UsersController
 
   def show
     @record = Record.
-              eager_load(record_exercises: { exercise: :part }).
-              eager_load(record_exercises: :exercise_details).
+              preload(comments: :user,
+                      record_exercises: [:exercise_details, exercise: :part]).
               find(params[:id])
-    @comments = @record.comments
   end
 
   private
