@@ -11,8 +11,6 @@ class Users::RecordsController < UsersController
 
   def new
     @record = Record.new
-    @parts = Part.all
-    @exercises = Exercise.all
   end
 
   def create
