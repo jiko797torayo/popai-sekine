@@ -9,8 +9,8 @@ class Users::TrainerRequestsController < UsersController
       trainer_id: current_user.id
     )
     if @trainer_request.save
-      TrainerRequestMailer.send_trainer_request_to_user(@trainer_request).deliver
-      TrainerRequestMailer.resend_trainer_request_to_trainer(@trainer_request).deliver
+      TrainerRequestMailer.send_to_user(@trainer_request).deliver
+      TrainerRequestMailer.send_to_trainer(@trainer_request).deliver
       redirect_to root_path
     else
       render :new
@@ -19,7 +19,7 @@ class Users::TrainerRequestsController < UsersController
 
   def confirm
     @trainer_request = TrainerRequest.find_by(request_token: params[:request_token])
-    redirect_to root_path if @trainer_request.nil? || @trainer_request.accepted_at || (@trainer_request.user_id != current_user.id)
+    redirect_to root_path if @trainer_request.invalid?(current_user)
   end
 
   def accept

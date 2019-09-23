@@ -4,4 +4,8 @@ class TrainerRequest < ApplicationRecord
 
   belongs_to :user, class_name: 'User', foreign_key: 'user_id'
   belongs_to :trainer, class_name: 'User', foreign_key: 'trainer_id'
+
+  def invalid?(current_user)
+    nil? || accepted_at || (user_id != current_user.id)
+  end
 end
