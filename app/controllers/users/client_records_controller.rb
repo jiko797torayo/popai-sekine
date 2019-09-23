@@ -5,7 +5,8 @@ class Users::ClientRecordsController < UsersController
     @records = Record.eager_load(:user).
                client(current_user).recent.
                preload(:comments, record_exercises: { exercise: :part })
-    @new_comment_exist_records_ids = @records.new_comment_exist(current_user).ids
+    @new_comment_exist_records_ids = @records.
+                                     new_comment_exist(current_user).ids.uniq!
   end
 
   def show

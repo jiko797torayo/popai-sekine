@@ -2,12 +2,11 @@ class Users::RecordsController < UsersController
   before_action :comment_confirm, only: [:index]
 
   def index
-    @records = current_user.records.
-               eager_load(record_exercises: { exercise: :part }).
-               eager_load(:comments).
-               eager_load(:user)
-    @trainer = User.find(current_user.trainer_id) if current_user.trainer_id
-    @not_confirm_comment_exit_record = Comment.where.not(user_id: current_user.id).where(receiver_confirmed_at: nil).map(&:record_id).uniq!
+    @records = current_user.records.recent.
+               preload(:comments, record_exercises: { exercise: :part })
+    @trainer = current_user.trainer
+    @new_comment_exist_records_ids = @records.
+                                     new_comment_exist(current_user).ids.uniq!
   end
 
   def new

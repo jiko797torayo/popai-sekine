@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :confirmable, :timeoutable
 
+  belongs_to :trainer, class_name: 'User', foreign_key: 'trainer_id', optional: true
+
   has_many :records, dependent: :destroy
   has_many :comments, dependent: :destroy
 

@@ -32,8 +32,7 @@ Metrics/LineLength:
 
 # １メソッドの行数を10行に制限
 Metrics/MethodLength:
-  CountComments: true
-  Max: 10
+  Enabled: false
 
 # 日本語コメントを許す
 Style/AsciiComments:
