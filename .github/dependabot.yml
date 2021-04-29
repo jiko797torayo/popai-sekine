@@ -1,0 +1,35 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  versioning-strategy: lockfile-only
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  ignore:
+  - dependency-name: bootsnap
+    versions:
+    - 1.5.1
+    - 1.6.0
+    - 1.7.2
+    - 1.7.3
+  - dependency-name: nokogiri
+    versions:
+    - 1.11.1
+    - 1.11.2
+  - dependency-name: excon
+    versions:
+    - 0.78.1
+    - 0.79.0
+  - dependency-name: webdrivers
+    versions:
+    - 4.5.0
+  - dependency-name: loofah
+    versions:
+    - 2.9.0
+  - dependency-name: carrierwave
+    versions:
+    - 2.1.0
